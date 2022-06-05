@@ -1,0 +1,24 @@
+.typewriter{
+    display: flex;
+}
+
+.transparent{
+    color: transparent;
+}
+
+.caret{
+    width: 5px;
+    height: 1em;
+    margin-left: 10px;
+    background-color: black;
+    animation: oscillating 1s steps(100) infinite;
+}
+
+@keyframes oscillating{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 0.8;
+    }
+}

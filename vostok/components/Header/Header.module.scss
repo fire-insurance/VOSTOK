@@ -1,0 +1,141 @@
+@import "../../styles/variables.scss";
+
+.header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    padding: 20px 30px;
+    max-width: 1400px;
+    .logo {
+        cursor: pointer;
+    }
+
+    .navigation {
+        display: flex;
+        column-gap: 40px;
+        align-items: center;
+
+        &__link {
+            color: black;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 21px;
+            transition: 0.25s;
+
+            img {
+                transition: 0.25s;
+            }
+
+            &:hover {
+                color: $palette-orange;
+                img {
+                    filter: invert(85%) sepia(33%) saturate(2390%) hue-rotate(310deg) brightness(99%) contrast(121%);
+                }
+            }
+        }
+    }
+
+    .burger {
+        flex-direction: column;
+        row-gap: 11px;
+        align-self: center;
+        justify-self: end;
+        display: none;
+        cursor: pointer;
+        z-index: 9999;
+
+        div {
+            width: 33px;
+            height: 2px;
+            background-color: black;
+            border-radius: 1px;
+            transition: all 0.4s;
+        }
+
+        &_opened {
+            div:nth-child(1) {
+                transform: translateY(13px) rotate(-45deg);
+            }
+            div:nth-child(2) {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            div:nth-child(3) {
+                transform: translateY(-13px) rotate(45deg);
+            }
+        }
+    }
+
+    &_burger-opened {
+        position: fixed;
+        background-color: #fff;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .header {
+        .burger {
+            display: flex;
+        }
+
+        .navigation {
+            position: absolute;
+            top: 79px;
+            right: 0;
+            flex-direction: column;
+            row-gap: 50px;
+            background-color: white;
+            padding: 50px 0px;
+            z-index: 999;
+            width: 100vw;
+
+            background-color: #fff;
+            height: fit-content;
+            opacity: 0;
+            transition: 0.4s ease-in-out;
+            transform: translateX(100%);
+
+            &_opened {
+                transform: translateX(0%);
+                opacity: 1;
+                position: fixed;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .header {
+        .navigation {
+            top: 65px;
+        }
+
+        .logo {
+            width: 120px;
+        }
+
+        .burger {
+            row-gap: 7px;
+
+            div {
+                width: 20px;
+                height: 1px;
+            }
+
+            &_opened {
+                div:nth-child(1) {
+                    transform: translateY(8px) rotate(-45deg);
+                }
+                div:nth-child(3) {
+                    transform: translateY(-8px) rotate(45deg);
+                }
+            }
+        }
+    }
+}
