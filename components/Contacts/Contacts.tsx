@@ -29,7 +29,7 @@ const Contacts = () => {
             </div>
 
             <div className={styles.styles__map}>
-
+                <div></div>
             </div>
 
         </section>
