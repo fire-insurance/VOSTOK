@@ -4,10 +4,12 @@
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
-    padding-bottom: 250px;
+    padding-bottom: 500px;
 
     &__container {
-        display: flex;
+        display: grid;
+        grid-template-columns: 47% 53%;
+        width: 100%;
         column-gap: 30px;
         justify-content: space-between;
         align-items: center;
@@ -25,6 +27,20 @@
                 line-height: 80px;
 
                 letter-spacing: -0.015em;
+            }
+
+            position: relative;
+
+            .decorative-circle {
+                position: absolute;
+                top: 250px;
+                left: 0;
+                background-color: #ffc2bd80;
+                width: 600px;
+                height: 600px;
+                border-radius: 50%;
+                filter: blur(200px);
+                z-index: -1;
             }
         }
 
@@ -49,10 +65,80 @@
         width: fit-content;
         max-width: 700px;
         position: relative;
-
-        .slider-pagination {
+        justify-self: flex-end;
+        #team-pagination {
+            width: fit-content;
             position: absolute;
             bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
         }
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .team {
+        padding-bottom: 250px;
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 50px;
+        }
+
+        &__text-block {
+            display: flex;
+            flex-direction: column;
+            row-gap: 30px;
+            align-items: baseline;
+
+            .description {
+                width: 100%;
+                margin-top: 0px;
+                p {
+                    max-width: unset;
+                }
+            }
+        }
+
+        .slider-container {
+            max-width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .team__text-block .title__small {
+        font-size: 72px;
+        line-height: 70px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .team {
+        padding-bottom: 200px;
+    }
+
+    .team__text-block .title {
+        row-gap: 20px;
+        &__small {
+            font-size: 60px;
+            line-height: 50px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .team__text-block .title__small {
+        font-size: 45px;
+        line-height: 40px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .team__text-block .title__small {
+        font-size: 42px;
+        line-height: 38px;
     }
 }

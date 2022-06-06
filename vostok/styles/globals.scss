@@ -64,6 +64,20 @@ h1 {
     font-weight: 300;
 }
 
+.watermark-text {
+    position: absolute;
+    bottom: 0;
+    right: -8px;
+    font-family: "Oswald";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 214px;
+    line-height: 193px;
+    z-index: -1;
+    color: #f1f1f1;
+    text-transform: uppercase;
+}
+
 @media screen and (max-width: 1280px) {
     h1 {
         font-size: 80px;
@@ -74,12 +88,27 @@ h1 {
         font-size: 16px;
         line-height: 20px;
     }
+
+    .watermark-text {
+        bottom: 0;
+        right: -8px;
+        font-size: 153px;
+        line-height: 145px;
+    }
+    
 }
 
 @media screen and (max-width: 1000px) {
     h1 {
         font-size: 65px;
         line-height: 67px;
+    }
+
+    .watermark-text {
+        bottom: 0;
+        right: -8px;
+        font-size: 123px;
+        line-height: 115px;
     }
 }
 
@@ -92,6 +121,13 @@ h1 {
     .project-paragraph {
         font-size: 14px;
         line-height: 17px;
+    }
+
+    .watermark-text {
+        bottom: 0;
+        right: -4px;
+        font-size: 100px;
+        line-height: 98px;
     }
 }
 

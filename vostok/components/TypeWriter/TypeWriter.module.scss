@@ -7,11 +7,11 @@
 }
 
 .caret{
-    width: 5px;
-    height: 1em;
+    width: 4px;
+    height: 1.1em;
     margin-left: 10px;
     background-color: black;
-    animation: oscillating 1s steps(100) infinite;
+    animation: oscillating 1.2s steps(100) infinite;
 }
 
 @keyframes oscillating{

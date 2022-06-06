@@ -40,14 +40,18 @@ const CounselorCard: FC<CounselorCardProps> = ({ lastName, name, title, experien
 
     return (
         <div className={styles.card}>
-            <img src={photo} alt="Адвокат" />
+            <div className={styles['card__image-container']}>
+                <img src={photo} alt="Адвокат" className={styles.portrait} />
+            </div>
             <div className={styles.card__data}>
                 <div className={styles['name-block']}>
                     <span className={styles['name-block__lastName']}>{lastName}</span>
                     <span className={styles['name-block__name']}>{name}</span>
                 </div>
-                <p className={cn("project-paragraph", styles['data-paragraph'], styles['data-paragraph_border-pink'])}>{title}</p>
-                <p className={cn("project-paragraph", styles['data-paragraph'], styles['data-paragraph_border-blue'])}>{getExperience(experienceStart)} юридической работы</p>
+                <div className={styles.perks}>
+                    <p className={cn("project-paragraph", styles['data-paragraph'], styles['data-paragraph_border-pink'])}>{title}</p>
+                    <p className={cn("project-paragraph", styles['data-paragraph'], styles['data-paragraph_border-blue'])}>{getExperience(experienceStart)} юридической работы</p>
+                </div>
 
                 <ProjectButton text='Подробнее' extraClass={styles['card__project-button']} />
             </div>

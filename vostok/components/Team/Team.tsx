@@ -19,6 +19,8 @@ const Team = () => {
                     <div className={styles.title}>
                         <h1>Команда</h1>
                         <h1 className={styles.title__small}>Профессионалов</h1>
+                        <div className={styles['decorative-circle']}></div>
+
                     </div>
 
                     <div className={styles.description}>
@@ -33,16 +35,41 @@ const Team = () => {
                             иск в суд, или другой документ, то, что для ас
                             неразрешимая проблема — для нас повседневная ситуация.
                         </p>
+
                     </div>
                 </div>
                 <div className={styles['slider-container']}>
 
                     <Swiper
                         slidesPerView={1}
-                        spaceBetween={50}
+                        spaceBetween={100}
                         modules={[Navigation, Pagination]}
                         navigation
-                        pagination={{ clickable: true, el: styles['slider-pagination'] }}
+                        pagination={{ clickable: true, el: '.slider-pagination', dynamicBullets: true }}
+
+                        breakpoints={{
+                            450: {
+                                slidesPerView: 1.15,
+                                spaceBetween: 20
+                            },
+
+                            550: {
+                                slidesPerView: 1.5,
+                                spaceBetween: 40
+                            },
+
+                            768: {
+                                slidesPerView: 1.4,
+                                spaceBetween: 70
+                            },
+                            1100: {
+                                slidesPerView: 1.8,
+                                spaceBetween: 70
+                            },
+                            1400: {
+                                slidesPerView: 1
+                            }
+                        }}
                     >
                         {teamData.map(member => {
                             return <SwiperSlide key={member.lastName}>
@@ -56,8 +83,7 @@ const Team = () => {
                             </SwiperSlide>
                         })}
                     </Swiper>
-
-                    <div className={styles['slider-pagination']}></div>
+                    <div className="slider-pagination" id={styles['team-pagination']}></div>
                 </div>
 
             </div>

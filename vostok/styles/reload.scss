@@ -122,6 +122,44 @@ button {
     }
 }
 
-.swiper-pagination{
-    bottom: -10px !important;
+:root {
+    --swiper-pagination-bullet-size: 10px;
+    --swiper-pagination-bullet-horizontal-gap: 20px;
+    --swiper-pagination-bullet-inactive-color: #686868;
+    --swiper-pagination-color: rgb(129, 129, 129);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    background-image: url("/arrow_R.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    position: unset;
+    width: 14px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    display: none;
+}
+
+.swiper-button-prev {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.swiper-wrapper {
+    padding: 0px 50px;
+}
+
+@media screen and (max-width: 768px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none !important;
+    }
+
+    .swiper-wrapper {
+        padding: 0px 0px;
+    }
 }

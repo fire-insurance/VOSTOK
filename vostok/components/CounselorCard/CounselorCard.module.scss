@@ -5,6 +5,21 @@
     column-gap: 40px;
     align-items: center;
     justify-content: center;
+    width: fit-content;
+
+    &__image-container {
+        border-radius: 160px;
+        min-width: 308px;
+        height: 445px;
+        overflow: hidden;
+        position: relative;
+        background: radial-gradient(circle at center, #fea45b 0, $palette-skin-color 60%, $palette-gray-brown 100%);
+
+        img {
+            position: absolute;
+            bottom: 0px;
+        }
+    }
 
     &__data {
         display: flex;
@@ -30,6 +45,12 @@
             }
         }
 
+        .perks {
+            display: flex;
+            flex-direction: column;
+            row-gap: 30px;
+        }
+
         .data-paragraph {
             padding-left: 12px;
             max-width: 20ch;
@@ -47,5 +68,90 @@
     &__project-button {
         padding: 12px 36px;
         border-radius: 60px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        flex-direction: column;
+        row-gap: 30px;
+
+        &__image-container {
+            border-radius: 60px;
+            width: 100%;
+
+            img {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        &__data {
+            .name-block {
+                &__lastName {
+                    font-size: 22px;
+                    line-height: 26px;
+                }
+
+                &__name {
+                    font-size: 18px;
+                    line-height: 20px;
+                }
+            }
+
+            .perks {
+                flex-direction: row;
+            }
+        }
+
+        &__project-button {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .card {
+        width: 100%;
+        row-gap: 20px;
+        &__image-container {
+            border-radius: 40px;
+            height: 300px;
+            min-width: unset;
+            img {
+                top: 30px;
+                width: 250px;
+            }
+        }
+        &__data {
+            width: 100%;
+
+            .perks{
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .card {
+        &__data {
+            .name-block {
+                &__lastName {
+                    font-size: 18px;
+                    line-height: 20px;
+                }
+
+                &__name {
+                    font-size: 16px;
+                    line-height: 18px;
+                }
+            }
+
+            .perks {
+                flex-direction: column;
+            }
+        }
     }
 }
