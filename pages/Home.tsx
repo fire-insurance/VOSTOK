@@ -4,6 +4,7 @@ import TitleBlock from "../components/TitleBlock/TitleBlock";
 import About from "../components/About/About";
 import Team from "../components/Team/Team";
 import Services from "../components/Services/Services";
+import Contacts from "../components/Contacts/Contacts";
 
 const Home = () => {
 
@@ -15,6 +16,7 @@ const Home = () => {
             </div>
             <Team />
             <Services />
+            <Contacts />
         </>
     )
 }
