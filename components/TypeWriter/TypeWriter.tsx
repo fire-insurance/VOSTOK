@@ -53,7 +53,7 @@ const TypeWriter: FC<TypeWriterProps> = ({ words, textClass }) => {
         <div className={cn(styles.typewriter, textClass)}>
             {currentWord}
             <div className={styles.caret}></div>
-            <span className={styles.transparent}>'</span>
+            <span className={styles.transparent}> </span>
         </div>
     )
 }
