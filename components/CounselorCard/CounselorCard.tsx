@@ -2,7 +2,6 @@ import cn from 'classnames';
 import { FC, useEffect } from 'react';
 import ProjectButton from '../ProjectButton/ProjectButton';
 import styles from './CounselorCard.module.scss'
-import Image from 'next/image';
 
 interface CounselorCardProps {
     lastName: string,
@@ -42,7 +41,7 @@ const CounselorCard: FC<CounselorCardProps> = ({ lastName, name, title, experien
     return (
         <div className={styles.card}>
             <div className={styles['card__image-container']}>
-                <Image src={photo} alt="Адвокат" className={styles.portrait} />
+                <img src={photo} alt="Адвокат" className={styles.portrait} />
             </div>
             <div className={styles.card__data}>
                 <div className={styles['name-block']}>

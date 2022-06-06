@@ -2,7 +2,6 @@ import styles from "./TitleBlock.module.scss"
 import ProjectButton from "../ProjectButton/ProjectButton";
 import TypeWriter from "../TypeWriter/TypeWriter";
 import cn from "classnames";
-import Image from 'next/image';
 
 const TitleBlock = () => {
 
@@ -23,7 +22,7 @@ const TitleBlock = () => {
                 <ProjectButton text="Заказать звонок" extraClass={styles['project-button']}></ProjectButton>
             </div>
 
-            <Image className={styles['home__main-image']} src="/MainPageIcon.svg" alt="" />
+            <img className={styles['home__main-image']} src="/MainPageIcon.svg" alt="" />
         </div>
     )
 

@@ -1,6 +1,5 @@
 import styles from './About.module.scss'
 import cn from 'classnames';
-import Image from 'next/image';
 
 const About = () => {
 
@@ -12,7 +11,7 @@ const About = () => {
                 <span className='light'>уже проиграл!</span>
             </h1>
 
-            <Image className={styles.photo} src="/Общая фотография.png" alt="Общая фотография сотрудников коллегии" />
+            <img className={styles.photo} src="/Общая фотография.png" alt="Общая фотография сотрудников коллегии" />
 
             <div className={styles['decorative-circle']}></div>
 
@@ -57,11 +56,11 @@ const About = () => {
             </section>
 
             <section className={styles['about__guarantees']}>
-                <Image className={styles['dec-half-circle']} src="/dec_half_circle.svg" alt="" />
+                <img className={styles['dec-half-circle']} src="/dec_half_circle.svg" alt="" />
                 <h2>Мы гарантируем</h2>
 
                 <div className={styles["guarantee-card"]}>
-                    <Image className={styles['guarantee-card__image']} src="/cheapIcon.svg" alt="" />
+                    <img className={styles['guarantee-card__image']} src="/cheapIcon.svg" alt="" />
                     <div className={styles['guarantee-card__data']}>
                         <p className={cn(styles["guarantee-card__title"], 'project-paragraph')}>Доступность</p>
                         <div className={styles['separation-line']}></div>
@@ -69,7 +68,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className={styles["guarantee-card"]}>
-                    <Image className={styles['guarantee-card__image']} src="/rapidIcon.svg" alt="" />
+                    <img className={styles['guarantee-card__image']} src="/rapidIcon.svg" alt="" />
                     <div className={styles['guarantee-card__data']}>
                         <p className={cn(styles["guarantee-card__title"], 'project-paragraph')}>Оперативность</p>
                         <div className={styles['separation-line']}></div>
@@ -77,7 +76,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className={styles["guarantee-card"]}>
-                    <Image className={styles['guarantee-card__image']} src="/eyeIcon.svg" alt="" />
+                    <img className={styles['guarantee-card__image']} src="/eyeIcon.svg" alt="" />
                     <div className={styles['guarantee-card__data']}>
                         <p className={cn(styles["guarantee-card__title"], 'project-paragraph')}>Прозрачность</p>
                         <div className={styles['separation-line']}></div>
@@ -85,7 +84,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className={styles["guarantee-card"]}>
-                    <Image className={styles['guarantee-card__image']} src="/lockIcon.svg" alt="" />
+                    <img className={styles['guarantee-card__image']} src="/lockIcon.svg" alt="" />
                     <div className={styles['guarantee-card__data']}>
                         <p className={cn(styles["guarantee-card__title"], 'project-paragraph')}>Конфеденциальность</p>
                         <div className={styles['separation-line']}></div>

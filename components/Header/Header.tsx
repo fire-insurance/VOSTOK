@@ -2,7 +2,6 @@ import styles from "./Header.module.scss"
 import Link from "next/link"
 import { useState } from "react"
 import cn from "classnames"
-import Image from 'next/image';
 
 const Header = () => {
 
@@ -18,11 +17,11 @@ const Header = () => {
                 onClick={handleBurgerClick}
             ></div>
             <header className={cn(styles.header, {[styles['header_burger-opened']]: burgerMenuOpened})}>
-                <Image className={styles.logo} src='/Лого.svg' alt="логотип коллегии" />
+                <img className={styles.logo} src='/Лого.svg' alt="логотип коллегии" />
                 <nav className={cn(styles.navigation, { [styles.navigation_opened]: burgerMenuOpened })}>
                     <Link href='/'>
                         <a href="" className={styles.navigation__link}>
-                            <Image src='/HomeIcon.svg' alt="на главную" />
+                            <img src='/HomeIcon.svg' alt="на главную" />
                         </a>
                     </Link>
                     <Link href='/'>

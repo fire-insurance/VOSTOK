@@ -1,6 +1,5 @@
 import styles from './Contacts.module.scss'
 import cn from 'classnames';
-import Image from 'next/image';
 
 const Contacts = () => {
 
@@ -15,15 +14,15 @@ const Contacts = () => {
 
                 <div className={styles.contacts__text}>
                     <a href='tel: +79141561147' className={styles['contact-single']}>
-                        <Image src="/phoneIcon.svg" alt="Телефон" />
+                        <img src="/phoneIcon.svg" alt="Телефон" />
                         <p className={styles.paragraph}>8 (914) 156 11 47</p>
                     </a>
                     <a className={styles['contact-single']}>
-                        <Image src="/locationIcon.svg" alt="Адрес" />
+                        <img src="/locationIcon.svg" alt="Адрес" />
                         <p className={styles.paragraph}>г. Хабаровск,  ул. Лейтенанта Шмидта, 30 офис 20/2</p>
                     </a>
                     <a href='mailto: habbara@bk.ru' className={styles['contact-single']}>
-                        <Image src="/mailIcon.svg" alt="Электронная почта" />
+                        <img src="/mailIcon.svg" alt="Электронная почта" />
                         <p className={styles.paragraph}>habbara@bk.ru</p>
                     </a>
                 </div>
