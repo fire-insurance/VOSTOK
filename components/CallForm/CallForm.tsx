@@ -4,7 +4,7 @@ import styles from './CallForm.module.scss'
 import cn from 'classnames'
 import { FormEvent, useState } from 'react';
 
-interface validationErrors {
+interface formInterface {
     name: string,
     phone: string,
     question: string
@@ -19,7 +19,7 @@ const emptyErrors = {
 
 const CallForm = () => {
 
-    const [errors, setErrors] = useState<validationErrors>(emptyErrors)
+    const [errors, setErrors] = useState<formInterface>(emptyErrors)
     const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
 
     const phonePattern = new RegExp(/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/, 'gm')
@@ -27,6 +27,7 @@ const CallForm = () => {
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         const formData = new FormData(e.currentTarget)
+
         for (let pair of formData.entries()) {
 
             if (pair[1] === '') {
@@ -42,12 +43,23 @@ const CallForm = () => {
                     return;
                 }
             }
+
         }
 
         setFormSubmitted(true)
         setTimeout(() => setFormSubmitted(false), 3000)
 
+        // @ts-ignore
+        sendToTelegram(formData.get('name'),formData.get('phone'),formData.get('question'))
         e.currentTarget.reset()
+    }
+
+    const sendToTelegram = (name: string, phone: string, question: string) => {
+        const message = `Новая заявка: %0A%0A● Имя: ${name} %0A%0A● Телефон: ${phone} %0A%0A● Вопрос: ${question}`
+        const url = `https://api.telegram.org/bot${process.env.BOT_TOKEN}/sendMessage?chat_id=${process.env.CHAT_ID}&text=`
+        let xhttp = new XMLHttpRequest();
+        xhttp.open("GET", url + message, true);
+        xhttp.send()
     }
 
     return (

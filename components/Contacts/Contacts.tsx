@@ -1,41 +1,9 @@
 import styles from './Contacts.module.scss'
 import cn from 'classnames';
-import { useEffect, useState } from 'react';
+import {useState } from 'react';
 
 const Contacts = () => {
 
-    const [mapsLoaded, setMapsLoaded] = useState<boolean>(false)
-    const [scriptSet, setScriptSet] = useState<boolean>(false)
-
-    // useEffect(() => {
-    //     const apiKey = 'e252709b-4445-4608-8c95-02476eae8d39'
-    //     const script = document.createElement('script');
-    //     script.src = `https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=${apiKey}`;
-    //     script.async = true;
-    //     script.defer = true;
-    //     script.addEventListener('load', () => {
-    //         setMapsLoaded(true);
-    //     });
-
-    //     if (!scriptSet) document.body.appendChild(script);
-    //     setScriptSet(true)
-    // }, [])
-
-    // useEffect(() => {
-
-    //     const ymaps = document.querySelector('ymaps');
-    //     console.log(ymaps)
-    //     // @ts-ignore
-    //     ymaps?.ready(() => {
-    //         // @ts-ignore
-    //         var myMap = new ymaps.Map('map', {
-    //             center: [55.751574, 37.573856],
-    //             zoom: 9
-    //         }, {
-    //             searchControlProvider: 'yandex#search'
-    //         })
-    //     })
-    // }, [mapsLoaded])
 
     return (
         <section className={cn(styles.contacts, 'container')} id='contacts-section'>
