@@ -26,9 +26,9 @@ const Header = () => {
                 <nav className={cn(styles.navigation, { [styles.navigation_opened]: burgerMenuOpened })}>
                     <div onClick={handleLinkClick}>
                         <Link href='/#title-section' >
-                            <a href="/" className={styles.navigation__link}>
+                            <p className={styles.navigation__link}>
                                 <img src='/HomeIcon.svg' alt="на главную" />
-                            </a>
+                            </p>
                         </Link>
                     </div>
 
