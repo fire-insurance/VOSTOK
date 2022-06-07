@@ -1,0 +1,305 @@
+@import "../../styles/variables.scss";
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.callForm {
+    background-color: #fff !important;
+    padding: 30px 40px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: (0px 0px 10px rgba(0, 0, 0, 0.1));
+    border-radius: 20px;
+    position: relative;
+
+    &__title {
+        font-family: "Oswald", sans-serif;
+        font-size: 30px;
+        line-height: 44px;
+        font-weight: 400;
+
+        .separation-line {
+            width: 100%;
+            position: relative;
+            height: 3px;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 10px;
+
+            div {
+                height: 100%;
+                border-radius: 3px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            div:first-child {
+                width: 100%;
+                background-color: $palette-skin-color;
+            }
+
+            div:nth-child(2) {
+                width: 80%;
+                background-color: $palette-gray-brown;
+            }
+
+            div:last-child {
+                width: 40%;
+                background-color: $palette-pink;
+            }
+        }
+    }
+
+    &__form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+        padding-top: 30px;
+        row-gap: 35px;
+
+        .input-block {
+            font-size: 20px;
+            line-height: 23px;
+            font-weight: 500;
+            position: relative;
+            .input {
+                margin-top: 5px;
+                width: 100%;
+                border: 1px solid rgba(0, 0, 0, 0.08);
+                border-radius: 20px;
+                padding: 10px 20px;
+                font-weight: 300;
+                transition: 0.25s;
+                outline: 2px solid transparent;
+
+                &:active,
+                &:focus {
+                    outline: 2px solid $palette-light-blue;
+                }
+            }
+
+            &_textarea {
+                grid-column: 1/-1;
+
+                textarea {
+                    resize: none;
+                    height: 6em !important;
+                }
+
+                .error-text {
+                    bottom: -20px;
+                    top: unset;
+                }
+            }
+        }
+    }
+
+    &__project-button {
+        grid-column: 1/-1;
+        justify-self: center;
+        margin-top: 10px;
+    }
+
+    .error-text {
+        position: absolute;
+        left: 0;
+        top: 80px;
+        color: $palette-pink;
+        font-weight: 300;
+        font-size: 16px;
+        display: none;
+        opacity: 0;
+
+        &_active {
+            display: block;
+            animation: fade-out 3s ease-in-out;
+        }
+    }
+
+    .decorative-circle {
+        position: absolute;
+
+        z-index: -1;
+
+        &_pink {
+            --size: 314px;
+            width: var(--size);
+            height: var(--size);
+            left: calc(var(--size) * (-0.7));
+            top: 0;
+        }
+
+        &_blue {
+            --size: 150px;
+            width: var(--size);
+            height: var(--size);
+            left: calc(var(--size) * (-0.2));
+            bottom: calc(var(--size) * (-0.5));
+
+            filter: brightness(0) saturate(100%) invert(70%) sepia(46%) saturate(297%) hue-rotate(172deg)
+                brightness(94%) contrast(88%);
+        }
+
+        &_skin {
+            --size: 230px;
+            width: var(--size);
+            height: var(--size);
+            right: calc(var(--size) * (-0.4));
+            bottom: calc(var(--size) * (-0.2));
+
+            filter: brightness(0) saturate(100%) invert(84%) sepia(13%) saturate(671%) hue-rotate(340deg)
+                brightness(102%) contrast(98%);
+        }
+    }
+}
+
+.checkMark {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    background-color: white;
+    display: flex;
+    padding: 15px;
+    border-radius: 20px 0px 20px 0px;
+    border: 1px solid #ececec;
+    opacity: 0;
+
+    span {
+        color: #8eb7e2;
+        font-size: 20px;
+        margin-left: 10px;
+    }
+
+    &-active {
+        animation: checkMarkAnimation 3s;
+    }
+}
+
+@keyframes checkMarkAnimation {
+    20% {
+        opacity: 1;
+        top: 0px;
+    }
+    100% {
+        opacity: 0;
+        top: 0px;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .callForm {
+        padding: 20px 30px;
+    
+        &__title {
+            font-size: 24px;
+            line-height: 28px;
+        }
+    
+        &__form {
+            grid-template-columns: 1fr;
+            padding-top: 25px;
+            row-gap: 30px;
+    
+            .input-block {
+                font-size: 18px;
+                line-height: 20px;
+    
+                &_textarea {
+                    .error-text {
+                        bottom: -25px;
+                    }
+                }
+            }
+        }
+    
+        &__project-button {
+            margin-top: 0px;
+        }
+    
+        .error-text {
+            top: 70px;
+        }
+    
+        .decorative-circle {
+    
+            &_pink {
+                --size: 200px;
+            }
+    
+            &_blue {
+                --size: 100px;
+            }
+    
+            &_skin {
+                --size: 130px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .callForm {
+        padding: 20px 20px;
+    
+        &__title {
+            font-size: 22px;
+            line-height: 24px;
+        }
+    
+        &__form {
+            display: grid;
+            grid-template-columns: 1fr;
+            padding-top: 20px;
+            row-gap: 35px;
+    
+            .input-block {
+                font-size: 16px;
+                line-height: 18px;
+    
+                &_textarea {
+                    .error-text {
+                        bottom: -20px;
+                    }
+                }
+            }
+        }
+    
+        &__project-button {
+            width: 100%;
+        }
+    
+        .error-text {
+            top: 65px;
+            font-size: 14px;
+            line-height: 17px;
+        }
+    
+        .decorative-circle {
+    
+            &_pink {
+                --size: 120px;
+            }
+    
+            &_blue {
+                --size: 80px;
+            }
+    
+            &_skin {
+                --size: 100px;
+            }
+        }
+    }
+}
+

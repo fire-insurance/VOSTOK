@@ -4,7 +4,7 @@ import cn from 'classnames';
 const About = () => {
 
     return (
-        <div className={styles.about}>
+        <div className={styles.about} id='about-section'>
             <h1 className={styles.about__title}>
                 <span>Тот, кто </span>
                 <span> не борется —</span>

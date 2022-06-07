@@ -4,7 +4,8 @@
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
-    padding-bottom: 500px;
+    padding-bottom: 250px;
+    padding-top: 250px;
 
     &__container {
         display: grid;
@@ -78,7 +79,8 @@
 
 @media screen and (max-width: 1400px) {
     .team {
-        padding-bottom: 250px;
+        padding-bottom: 0px;
+        padding-top: 200px;
 
         &__container {
             display: flex;
@@ -117,7 +119,7 @@
 
 @media screen and (max-width: 1000px) {
     .team {
-        padding-bottom: 200px;
+        padding-top: 150px;
     }
 
     .team__text-block .title {
@@ -130,6 +132,9 @@
 }
 
 @media screen and (max-width: 600px) {
+    .team {
+        padding-top: 60px;
+    }
     .team__text-block .title__small {
         font-size: 45px;
         line-height: 40px;

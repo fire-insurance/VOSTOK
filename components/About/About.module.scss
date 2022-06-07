@@ -1,7 +1,7 @@
 @import "../../styles/variables.scss";
 
 .about {
-    padding: 250px 0px 250px 0px;
+    padding-top: 250px;
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -162,7 +162,7 @@
 
 @media screen and (max-width: 1150px) {
     .about {
-        padding: 200px 0px 150px 0px;
+        padding-top: 200px;
 
         .decorative-circle{
             top: 800px;
@@ -246,7 +246,7 @@
 
 @media screen and (max-width: 700px) {
     .about {
-        padding: 150px 0px 150px 0px;
+        padding-top: 150px;
         row-gap: 50px;
 
         .decorative-circle{
@@ -296,7 +296,7 @@
 
 @media screen and (max-width: 560px) {
     .about {
-        padding: 100px 0px 100px 0px;
+        padding-top: 100px;
         row-gap: 40px;
 
         &__questions {

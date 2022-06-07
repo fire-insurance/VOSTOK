@@ -12,7 +12,7 @@ const Services = () => {
         'Защита в сфере оборота наркотиков']
 
     return (
-        <section className={styles.services}>
+        <section className={styles.services} id='services-section'>
             <div className={cn('container', styles.services__container)}>
 
                 <div className={styles.services__data}>

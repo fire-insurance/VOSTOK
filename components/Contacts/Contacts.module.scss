@@ -1,10 +1,11 @@
 @import "../../styles/variables.scss";
 
 .contacts {
-    margin: 100px 0px 250px 0px;
+    padding-top: 250px;
+    margin-bottom: 100px;
     display: flex;
     justify-content: space-between;
-
+    column-gap: 50px;
     &__data {
         display: flex;
         flex-direction: column;
@@ -40,13 +41,178 @@
         flex-direction: column;
         row-gap: 20px;
     }
+
+    .map-container {
+        margin-right: 30px;
+        --map-width: 460px;
+        --map-height: 460px;
+
+        width: var(--map-width);
+        height: var(--map-height);
+        position: relative;
+
+        .background {
+            width: var(--map-width);
+            height: var(--map-height);
+            border-radius: 50px;
+            z-index: -1;
+            position: absolute;
+
+            background-color: #dd7948;
+            top: 15px;
+            left: 15px;
+        }
+
+        #bg2 {
+            background-color: #ffa569;
+            top: 30px;
+            left: 30px;
+            z-index: -2;
+        }
+
+        .decorative-circle {
+            width: 525px;
+            height: 525px;
+            background-color: #ffa5695a;
+            border-radius: 50%;
+            z-index: -3;
+            position: absolute;
+            left: -100px;
+            top: -50px;
+            filter: blur(100px);
+        }
+    }
+
+    &__yandex-map {
+        width: 100%;
+        height: 100%;
+        border-radius: 50px;
+        overflow: hidden;
+        z-index: 50;
+    }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
     .contacts {
-        margin: 50px 0px 250px 0px;
+        padding-top: 150px;
+        margin-bottom: 100px;
+
         &__title {
             row-gap: 0px;
+        }
+
+        &__data {
+            row-gap: 50px;
+        }
+
+        &__text {
+            display: flex;
+            flex-direction: column;
+            row-gap: 25px;
+
+            .contact-single {
+                display: flex;
+                column-gap: 15px;
+                font-size: 24px;
+                line-height: 28px;
+
+                img {
+                    width: 30px;
+                }
+            }
+        }
+
+        .map-container {
+            --map-width: 360px;
+            --map-height: 360px;
+
+            .decorative-circle {
+                width: 425px;
+                height: 425px;
+                background-color: #ffa5693a;
+                left: -50px;
+                top: -50px;
+                filter: blur(100px);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .contacts {
+        flex-direction: column;
+        width: 100%;
+        row-gap: 50px;
+
+        .map-container {
+            --map-width: calc(100vw - 90px);
+            --map-height: 360px;
+            .decorative-circle {
+                width: 425px;
+                height: 425px;
+                background-color: #ffa5693a;
+                left: -50px;
+                top: -50px;
+                filter: blur(100px);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .contacts {
+        padding-top: 100px;
+        margin-bottom: 60px;
+
+        &__data {
+            row-gap: 40px;
+        }
+
+        &__text {
+            row-gap: 20px;
+
+            .contact-single {
+                column-gap: 10px;
+                font-size: 20px;
+                line-height: 22px;
+
+                img {
+                    width: 22px;
+                }
+            }
+        }
+
+        .map-container {
+            --map-width: calc(100vw - 70px);
+            --map-height: calc(100vw - 70px);
+
+            .background {
+                border-radius: 20px;
+                z-index: -1;
+                position: absolute;
+
+                background-color: #dd7948;
+                top: 5px;
+                left: 5px;
+            }
+
+            #bg2 {
+                background-color: #ffa569;
+                top: 10px;
+                left: 10px;
+            }
+
+            .decorative-circle {
+                width: 225px;
+                height: 225px;
+                background-color: #ffa5698a;
+                left: 0px;
+                top: 50px;
+            }
+        }
+
+        &__yandex-map {
+            border-radius: 20px;
         }
     }
 }

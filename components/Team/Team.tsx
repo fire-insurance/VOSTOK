@@ -13,7 +13,7 @@ import cn from "classnames";
 const Team = () => {
 
     return (
-        <section className={styles.team}>
+        <section className={styles.team} id='team-section'>
             <div className={cn("container", styles.team__container)}>
                 <div className={styles['team__text-block']}>
                     <div className={styles.title}>
