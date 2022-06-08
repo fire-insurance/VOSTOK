@@ -11,8 +11,7 @@ const PageContainer: NextPage = () => {
     <>
       <Head>
         <title>Восток | Коллегия адвокатов</title>
-        <meta name="description" content="Коллегия адвокатов Восток в городе Хабаровск" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Коллегия адвокатов Восток в городе Хабаровске" />
       </Head>
 
       <main className='page-layout'>
