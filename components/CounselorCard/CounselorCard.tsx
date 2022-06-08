@@ -2,6 +2,7 @@ import cn from 'classnames';
 import Link from 'next/link';
 import { FC } from 'react';
 import styles from './CounselorCard.module.scss'
+import Image from 'next/image'
 
 interface CounselorCardProps {
     id: string,
@@ -42,7 +43,10 @@ const CounselorCard: FC<CounselorCardProps> = ({ id, lastName, name, title, expe
     return (
         <div className={styles.card}>
             <div className={styles['card__image-container']}>
-                <img src={photo} alt="Адвокат" className={styles.portrait} />
+                <div className={styles.portrait}>
+                    <Image src={photo} alt="Адвокат" layout='fill' />
+                </div>
+
             </div>
             <div className={styles.card__data}>
                 <div className={styles['name-block']}>
@@ -54,7 +58,7 @@ const CounselorCard: FC<CounselorCardProps> = ({ id, lastName, name, title, expe
                     <p className={cn("project-paragraph", styles['data-paragraph'], styles['data-paragraph_border-blue'])}>{getExperience(experienceStart)} юридической работы</p>
                 </div>
                 <Link href={`/lawyers/${id}`}>
-                     <a className={styles['card__project-button']}>Подробнее</a>
+                    <a className={styles['card__project-button']}>Подробнее</a>
                 </Link>
 
             </div>

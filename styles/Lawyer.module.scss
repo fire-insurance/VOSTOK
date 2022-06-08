@@ -55,15 +55,21 @@
             height: var(--wrapper-size);
             border-radius: 50%;
             overflow: hidden;
-            position: relative;
-
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
             img {
-                width: calc(var(--wrapper-size) * 0.75);
                 position: absolute;
                 bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
             }
+        }
+
+        .image-fill {
+            max-height: 92%;
+            max-width: 75%;
+            width: 100%;
+            height: 100%;
+            position: relative;
         }
 
         .background-circle {
@@ -304,8 +310,8 @@
             }
         }
 
-        &__data-cards{
-            .data-card{
+        &__data-cards {
+            .data-card {
                 height: 100%;
             }
         }

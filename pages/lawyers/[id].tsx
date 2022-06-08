@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import ProjectButton from "../../components/ProjectButton/ProjectButton";
 import MakeModal from "../../components/MakeModal/MakeModal";
 import CallForm from "../../components/CallForm/CallForm";
-
+import Image from "next/image";
 
 const Lawyer = () => {
     const [lawyer, setLawyer] = useState<LawyerInterface>(emptyLawyer)
@@ -17,9 +17,6 @@ const Lawyer = () => {
     const [modalOpened, setModalOpened] = useState<boolean>(false)
     const closeModal = () => setModalOpened(false)
     const openModal = () => setModalOpened(true)
-
-
-
 
     useEffect(() => {
         if (router.isReady) {
@@ -86,7 +83,9 @@ const Lawyer = () => {
                     <div className={styles.lawyer__main}>
                         <div className={styles['image-container']}>
                             <div className={styles['image-wrapper']}>
-                                <img src={lawyer.photo} alt={lawyer.lastName + ' ' + lawyer.name} />
+                                <div className={styles['image-fill']}>
+                                    <Image src={lawyer.photo} alt={lawyer.lastName + ' ' + lawyer.name} layout='fill' />
+                                </div>
                             </div>
                             <div className={cn(styles['background-circle'], styles['background-circle_gbrown'])}></div>
                             <div className={cn(styles['background-circle'], styles['background-circle_skin'])}></div>

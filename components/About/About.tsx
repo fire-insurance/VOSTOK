@@ -1,6 +1,7 @@
 import styles from './About.module.scss'
 import cn from 'classnames';
-
+import Image from 'next/image';
+import teamPicture from '../../public/Общая фотография.png'
 const About = () => {
 
     return (
@@ -10,8 +11,9 @@ const About = () => {
                 <span> не борется —</span>
                 <span className='light'>уже проиграл!</span>
             </h1>
-
-            <img className={styles.photo} src="/Общая фотография.png" alt="Общая фотография сотрудников коллегии" />
+            <div className={styles.photo}>
+                <Image src={teamPicture} alt="Общая фотография сотрудников коллегии" />
+            </div>
 
             <div className={styles['decorative-circle']}></div>
 

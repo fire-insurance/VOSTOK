@@ -86,9 +86,9 @@ const CallForm: FC<CallFormProps> = ({ source }) => {
                 </div>
 
                 <form action="" onSubmit={handleSubmit} className={styles.callForm__form}>
-                    <img className={cn(styles['decorative-circle'], styles['decorative-circle_pink'])} src='/decorative-circle.svg'></img>
-                    <img className={cn(styles['decorative-circle'], styles['decorative-circle_blue'])} src='/decorative-circle.svg'></img>
-                    <img className={cn(styles['decorative-circle'], styles['decorative-circle_skin'])} src='/decorative-circle.svg'></img>
+                    <img className={cn(styles['decorative-circle'], styles['decorative-circle_pink'])} src='/decorative-circle.svg' alt=''></img>
+                    <img className={cn(styles['decorative-circle'], styles['decorative-circle_blue'])} src='/decorative-circle.svg' alt=''></img>
+                    <img className={cn(styles['decorative-circle'], styles['decorative-circle_skin'])} src='/decorative-circle.svg' alt=''></img>
 
                     <label className={styles['input-block']}>
                         <p>Ваше имя</p>

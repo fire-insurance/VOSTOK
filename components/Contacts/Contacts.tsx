@@ -47,10 +47,10 @@ const Contacts = () => {
                         <img src="/phoneIcon.svg" alt="Телефон" />
                         <p className={styles.paragraph}>8 (914) 156 11 47</p>
                     </a>
-                    <a className={styles['contact-single']}>
+                    <div className={styles['contact-single']}>
                         <img src="/locationIcon.svg" alt="Адрес" />
                         <p className={styles.paragraph}>г. Хабаровск,  ул. Лейтенанта Шмидта, 30 офис 20/2</p>
-                    </a>
+                    </div>
                     <a href='mailto: habbara@bk.ru' className={styles['contact-single']}>
                         <img src="/mailIcon.svg" alt="Электронная почта" />
                         <p className={styles.paragraph}>habbara@bk.ru</p>

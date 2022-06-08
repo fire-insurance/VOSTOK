@@ -140,7 +140,7 @@ export const emptyLawyer = {
     title: '',
     experienceStart: 2000,
     lawyerSince: 2000,
-    photo: '',
+    photo: '/',
     specialization: [],
     dataParagraphs: []
 }
