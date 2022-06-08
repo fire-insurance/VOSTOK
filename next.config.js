@@ -5,7 +5,7 @@ const nextConfig = {
   env: {
     YMAPS_KEY: process.env.YMAPS_KEY,
     BOT_TOKEN: process.env.BOT_TOKEN,
-    CHAT_ID: process.env.CHAT_ID
+    CHAT_ID: process.env.CHAT_ID,
   }
 }
 
