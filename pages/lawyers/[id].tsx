@@ -8,6 +8,7 @@ import ProjectButton from "../../components/ProjectButton/ProjectButton";
 import MakeModal from "../../components/MakeModal/MakeModal";
 import CallForm from "../../components/CallForm/CallForm";
 import Image from "next/image";
+import Head from "next/head";
 
 const Lawyer = () => {
     const [lawyer, setLawyer] = useState<LawyerInterface>(emptyLawyer)
@@ -61,94 +62,104 @@ const Lawyer = () => {
 
 
     return (
-        <div className="page-layout">
 
-            <MakeModal
-                modalOpened={modalOpened}
-                closeModal={closeModal}
-                hasBackground={false}
-            >
-                <CallForm source={`со страницы "${lawyer.lastName}"`} />
-            </MakeModal>
+        <>
+            <Head>
+                <title>{`Восток | ${lawyer.lastName} ${lawyer.name} адвокат`}</title>
+                <meta name="description" content={`${lawyer.lastName} ${lawyer.name} - ${lawyer.title} в коллегии адвокатов "Восток" в городе Хабаровск `} />
+                <meta name="keywords" content={`Коллегия адвокатов, Восток, Хабаровск, адвокат, ${lawyer.lastName} ${lawyer.name}, ${lawyer.specialization.toString()}`} />
+            </Head>
 
-            <section className={cn("container", styles['lawyer-container'])}>
-                <Link href='/#team-section'>
-                    <div className={styles['link-back']}>
-                        <img src="/arrow_R.svg" alt="Назад к команде" />
-                        <a>Команда</a>
-                    </div>
-                </Link>
+            <div className="page-layout">
 
-                <div className={styles.lawyer}>
-                    <div className={styles.lawyer__main}>
-                        <div className={styles['image-container']}>
-                            <div className={styles['image-wrapper']}>
-                                <div className={styles['image-fill']}>
-                                    <Image src={lawyer.photo} alt={lawyer.lastName + ' ' + lawyer.name} layout='fill' />
+                <MakeModal
+                    modalOpened={modalOpened}
+                    closeModal={closeModal}
+                    hasBackground={false}
+                >
+                    <CallForm source={`со страницы "${lawyer.lastName}"`} />
+                </MakeModal>
+
+                <section className={cn("container", styles['lawyer-container'])}>
+                    <Link href='/#team-section'>
+                        <div className={styles['link-back']}>
+                            <img src="/arrow_R.svg" alt="Назад к команде" />
+                            <a>Команда</a>
+                        </div>
+                    </Link>
+
+                    <div className={styles.lawyer}>
+                        <div className={styles.lawyer__main}>
+                            <div className={styles['image-container']}>
+                                <div className={styles['image-wrapper']}>
+                                    <div className={styles['image-fill']}>
+                                        <Image src={lawyer.photo} alt={lawyer.lastName + ' ' + lawyer.name} layout='fill' />
+                                    </div>
+                                </div>
+                                <div className={cn(styles['background-circle'], styles['background-circle_gbrown'])}></div>
+                                <div className={cn(styles['background-circle'], styles['background-circle_skin'])}></div>
+                                <div className={cn(styles['background-circle'], styles['background-circle_pink'])}></div>
+                            </div>
+
+                            <div className={styles['data-block']}>
+                                <p className={styles.lastName}>{lawyer.lastName}</p>
+                                <p className={styles.name}>{lawyer.name}</p>
+
+                                <div className={styles['separation-line']}>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+
+                                <p className={styles['lawyer-title']}>{lawyer.title}</p>
+
+                                <div className={styles['data-paragraphs']}>
+                                    {lawyer.dataParagraphs?.map((paragraph, index) =>
+                                        <p key={index} className="project-paragraph">{paragraph}</p>
+                                    )}
                                 </div>
                             </div>
-                            <div className={cn(styles['background-circle'], styles['background-circle_gbrown'])}></div>
-                            <div className={cn(styles['background-circle'], styles['background-circle_skin'])}></div>
-                            <div className={cn(styles['background-circle'], styles['background-circle_pink'])}></div>
                         </div>
 
-                        <div className={styles['data-block']}>
-                            <p className={styles.lastName}>{lawyer.lastName}</p>
-                            <p className={styles.name}>{lawyer.name}</p>
-
-                            <div className={styles['separation-line']}>
-                                <div></div>
-                                <div></div>
-                                <div></div>
+                        <div className={styles['lawyer__data-cards']}>
+                            <div className={cn(styles['data-card'], styles['data-card_specialization'])}>
+                                <div className={styles['data-card__title']}>
+                                    <div className={styles.borderline}></div>
+                                    <p>Специализация</p>
+                                </div>
+                                <div className={styles['specialization-items']}>
+                                    {lawyer.specialization?.map((item, index) =>
+                                        <p key={index} className="project-paragraph">{item}</p>
+                                    )}
+                                </div>
                             </div>
 
-                            <p className={styles['lawyer-title']}>{lawyer.title}</p>
-
-                            <div className={styles['data-paragraphs']}>
-                                {lawyer.dataParagraphs?.map((paragraph, index) =>
-                                    <p key={index} className="project-paragraph">{paragraph}</p>
-                                )}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className={styles['lawyer__data-cards']}>
-                        <div className={cn(styles['data-card'], styles['data-card_specialization'])}>
-                            <div className={styles['data-card__title']}>
-                                <div className={styles.borderline}></div>
-                                <p>Специализация</p>
-                            </div>
-                            <div className={styles['specialization-items']}>
-                                {lawyer.specialization?.map((item, index) =>
-                                    <p key={index} className="project-paragraph">{item}</p>
-                                )}
-                            </div>
-                        </div>
-
-                        {lawyer.lawyerSince ?
+                            {lawyer.lawyerSince ?
+                                <div className={cn(styles['data-card'], styles['data-card_years-data'])}>
+                                    <div className={styles['data-card__title']}>
+                                        <div className={styles.borderline}></div>
+                                        <p>Статус адвоката</p>
+                                    </div>
+                                    {getExperience(lawyer.lawyerSince)}
+                                </div>
+                                :
+                                <></>
+                            }
                             <div className={cn(styles['data-card'], styles['data-card_years-data'])}>
                                 <div className={styles['data-card__title']}>
                                     <div className={styles.borderline}></div>
-                                    <p>Статус адвоката</p>
+                                    <p>Юридический стаж</p>
                                 </div>
-                                {getExperience(lawyer.lawyerSince)}
+                                {getExperience(lawyer.experienceStart)}
                             </div>
-                            :
-                            <></>
-                        }
-                        <div className={cn(styles['data-card'], styles['data-card_years-data'])}>
-                            <div className={styles['data-card__title']}>
-                                <div className={styles.borderline}></div>
-                                <p>Юридический стаж</p>
-                            </div>
-                            {getExperience(lawyer.experienceStart)}
                         </div>
                     </div>
-                </div>
 
-                <ProjectButton text="Заказать звонок" extraClass={styles['project-button']} onClick={openModal} />
-            </section>
-        </div>
+                    <ProjectButton text="Заказать звонок" extraClass={styles['project-button']} onClick={openModal} />
+                </section>
+            </div>
+        </>
+
     )
 }
 

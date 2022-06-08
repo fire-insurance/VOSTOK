@@ -105,7 +105,7 @@ export const teamData = [
         id: 'Popov',
         lastName: 'Попов',
         name: 'Андрей Николаевич',
-        title: 'Адвокат',
+        title: 'Помощник адвоката',
         experienceStart: 2006,
         lawyerSince: 0,
         photo: '/Team/Popov.png',
