@@ -4,7 +4,6 @@
     display: flex;
     flex-direction: column;
     row-gap: 40px;
-    padding-bottom: 100px;
     max-width: 1200px;
 }
 
@@ -371,9 +370,7 @@
         }
     }
 
-    .lawyer-container {
-        padding-bottom: 60px;
-    }
+
 }
 
 @media screen and (max-width: 550px) {

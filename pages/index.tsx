@@ -16,7 +16,6 @@ const PageContainer: NextPage = () => {
       </Head>
 
       <main className='page-layout'>
-        <Header />
         <div className='page-container'>
           <Home />
         </div>

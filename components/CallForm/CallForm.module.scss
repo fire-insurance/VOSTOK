@@ -1,6 +1,6 @@
 @import "../../styles/variables.scss";
 
-.container{
+.container {
     display: flex;
     justify-content: center;
 }
@@ -17,8 +17,11 @@
     &__title {
         font-family: "Oswald", sans-serif;
         font-size: 30px;
-        line-height: 44px;
-        font-weight: 400;
+
+        h2 {
+            line-height: 44px;
+            font-weight: 400;
+        }
 
         .separation-line {
             width: 100%;
@@ -201,21 +204,21 @@
 @media screen and (max-width: 700px) {
     .callForm {
         padding: 20px 30px;
-    
-        &__title {
+
+        &__title h2 {
             font-size: 24px;
             line-height: 28px;
         }
-    
+
         &__form {
             grid-template-columns: 1fr;
             padding-top: 25px;
             row-gap: 30px;
-    
+
             .input-block {
                 font-size: 18px;
                 line-height: 20px;
-    
+
                 &_textarea {
                     .error-text {
                         bottom: -25px;
@@ -223,25 +226,24 @@
                 }
             }
         }
-    
+
         &__project-button {
             margin-top: 0px;
         }
-    
+
         .error-text {
             top: 70px;
         }
-    
+
         .decorative-circle {
-    
             &_pink {
                 --size: 200px;
             }
-    
+
             &_blue {
                 --size: 100px;
             }
-    
+
             &_skin {
                 --size: 130px;
             }
@@ -252,22 +254,22 @@
 @media screen and (max-width: 500px) {
     .callForm {
         padding: 20px 20px;
-    
-        &__title {
+
+        &__title h2{
             font-size: 22px;
             line-height: 24px;
         }
-    
+
         &__form {
             display: grid;
             grid-template-columns: 1fr;
             padding-top: 20px;
             row-gap: 35px;
-    
+
             .input-block {
                 font-size: 16px;
                 line-height: 18px;
-    
+
                 &_textarea {
                     .error-text {
                         bottom: -20px;
@@ -275,31 +277,29 @@
                 }
             }
         }
-    
+
         &__project-button {
             width: 100%;
         }
-    
+
         .error-text {
             top: 65px;
             font-size: 14px;
             line-height: 17px;
         }
-    
+
         .decorative-circle {
-    
             &_pink {
                 --size: 120px;
             }
-    
+
             &_blue {
                 --size: 80px;
             }
-    
+
             &_skin {
                 --size: 100px;
             }
         }
     }
 }
-

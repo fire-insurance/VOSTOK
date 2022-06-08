@@ -76,7 +76,7 @@ const CallForm: FC<CallFormProps> = ({ source }) => {
                 </div>
 
                 <div className={styles.callForm__title}>
-                    <h3>Свяжитесь с нами уже сейчас</h3>
+                    <h2>Свяжитесь с нами уже сейчас</h2>
 
                     <div className={styles['separation-line']}>
                         <div></div>

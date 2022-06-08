@@ -17,7 +17,7 @@ const Header = () => {
     }
 
     return (
-        <>
+        <div className="page-layout">
             <div className={cn('darkening', { ['darkening_active']: burgerMenuOpened })}
                 onClick={handleBurgerClick}
             ></div>
@@ -44,7 +44,7 @@ const Header = () => {
                     <div></div>
                 </div>
             </header>
-        </>
+        </div>
 
     )
 }
