@@ -32,7 +32,7 @@ const Team = () => {
                         </p>
                         <p className="project-paragraph">
                             Если вам нужно срочно составить договор,
-                            иск в суд, или другой документ, то, что для ас
+                            иск в суд, или другой документ, то, что для вас
                             неразрешимая проблема — для нас повседневная ситуация.
                         </p>
 
@@ -72,8 +72,9 @@ const Team = () => {
                         }}
                     >
                         {teamData.map(member => {
-                            return <SwiperSlide key={member.lastName}>
+                            return <SwiperSlide key={member.id}>
                                 <CounselorCard
+                                    id={member.id}
                                     name={member.name}
                                     lastName={member.lastName}
                                     title={member.title}

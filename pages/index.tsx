@@ -5,6 +5,8 @@ import Home from './Home'
 import Script from 'next/script'
 
 const PageContainer: NextPage = () => {
+  const ymaps_link = `https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=${process.env.YMAPS_KEY}`
+
   return (
     <>
       <Head>
@@ -19,6 +21,8 @@ const PageContainer: NextPage = () => {
           <Home />
         </div>
       </main>
+
+      <Script src={ymaps_link} strategy='beforeInteractive' />
     </>
 
   )

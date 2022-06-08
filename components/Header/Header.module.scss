@@ -10,6 +10,7 @@
     backdrop-filter: blur(20px);
     padding: 20px 30px;
     max-width: 1400px;
+    position: relative;
     .logo {
         cursor: pointer;
     }
@@ -42,14 +43,18 @@
     }
 
     .burger {
+        position: absolute;
+        right: 30px;
         flex-direction: column;
         row-gap: 11px;
         align-self: center;
-        justify-self: end;
         display: none;
         cursor: pointer;
         z-index: 9999;
-
+        height: 100%;
+        aspect-ratio: 1;
+        align-items: flex-end;
+        justify-content: center;
         div {
             width: 33px;
             height: 2px;

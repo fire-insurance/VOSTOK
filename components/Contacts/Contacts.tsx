@@ -1,9 +1,37 @@
 import styles from './Contacts.module.scss'
 import cn from 'classnames';
-import {useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Contacts = () => {
 
+    useEffect(() => {
+        let myMap;
+
+        // @ts-ignore
+        ymaps?.ready(init_ymaps);
+
+        function init_ymaps() {
+          
+            // @ts-ignore
+            myMap = new ymaps.Map('map', {
+                center: [48.48956188, 135.06344215],
+                zoom: 17
+            }, {
+                searchControlProvider: 'yandex#search'
+            });
+
+            // @ts-ignore
+            let myGeoObject = new ymaps.GeoObject({
+                geometry: {
+                    type: "Point",
+                    coordinates: [48.48953019, 135.06340984]
+                }
+            });
+
+            myMap.geoObjects.add(myGeoObject);
+        }
+
+    }, [])
 
     return (
         <section className={cn(styles.contacts, 'container')} id='contacts-section'>

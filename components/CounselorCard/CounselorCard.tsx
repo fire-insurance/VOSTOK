@@ -1,9 +1,10 @@
 import cn from 'classnames';
-import { FC, useEffect } from 'react';
-import ProjectButton from '../ProjectButton/ProjectButton';
+import Link from 'next/link';
+import { FC } from 'react';
 import styles from './CounselorCard.module.scss'
 
 interface CounselorCardProps {
+    id: string,
     lastName: string,
     name: string,
     title: string,
@@ -11,7 +12,7 @@ interface CounselorCardProps {
     photo: string,
 }
 
-const CounselorCard: FC<CounselorCardProps> = ({ lastName, name, title, experienceStart, photo }) => {
+const CounselorCard: FC<CounselorCardProps> = ({ id, lastName, name, title, experienceStart, photo }) => {
 
     const getExperience = (start: number) => {
         const currentYear = new Date().getFullYear();
@@ -52,8 +53,10 @@ const CounselorCard: FC<CounselorCardProps> = ({ lastName, name, title, experien
                     <p className={cn("project-paragraph", styles['data-paragraph'], styles['data-paragraph_border-pink'])}>{title}</p>
                     <p className={cn("project-paragraph", styles['data-paragraph'], styles['data-paragraph_border-blue'])}>{getExperience(experienceStart)} юридической работы</p>
                 </div>
+                <Link href={`/lawyers/${id}`}>
+                     <a className={styles['card__project-button']}>Подробнее</a>
+                </Link>
 
-                <ProjectButton text='Подробнее' extraClass={styles['card__project-button']} />
             </div>
         </div>
     )

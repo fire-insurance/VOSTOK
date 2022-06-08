@@ -49,6 +49,8 @@
 
         width: var(--map-width);
         height: var(--map-height);
+        min-width: var(--map-width);
+        min-height: var(--map-height);
         position: relative;
 
         .background {

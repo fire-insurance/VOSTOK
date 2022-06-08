@@ -1,0 +1,466 @@
+@import "../styles/variables.scss";
+
+.lawyer-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    padding-bottom: 100px;
+    max-width: 1200px;
+}
+
+.link-back {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+    font-size: 18px;
+    line-height: 21px;
+    cursor: pointer;
+    transition: 0.5s;
+    color: black;
+    width: fit-content;
+
+    img {
+        transform: rotate(180deg);
+    }
+
+    &:hover {
+        filter: invert(85%) sepia(33%) saturate(2390%) hue-rotate(310deg) brightness(99%) contrast(121%);
+    }
+}
+
+.lawyer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+
+    &__main {
+        width: 100%;
+        display: flex;
+        column-gap: 70px;
+        justify-content: space-between;
+
+        --wrapper-size: 335px;
+
+        .image-container {
+            position: relative;
+            margin-left: 50px;
+            height: fit-content;
+            width: fit-content;
+        }
+
+        .image-wrapper {
+            background-color: transparent;
+            width: var(--wrapper-size);
+            height: var(--wrapper-size);
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                width: calc(var(--wrapper-size) * 0.75);
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        .background-circle {
+            position: absolute;
+            border-radius: 50%;
+
+            &_skin {
+                width: var(--wrapper-size);
+                height: var(--wrapper-size);
+                top: 0;
+                left: 0;
+                background-color: $palette-skin-color;
+                z-index: -2;
+            }
+
+            &_gbrown {
+                width: calc(var(--wrapper-size) * 0.73);
+                height: calc(var(--wrapper-size) * 0.73);
+                left: -50px;
+                bottom: -40px;
+                background-color: $palette-gray-brown;
+                z-index: -1;
+            }
+
+            &_pink {
+                width: calc(var(--wrapper-size) * 0.6);
+                height: calc(var(--wrapper-size) * 0.6);
+                right: -30px;
+                bottom: -30px;
+                background-color: $palette-light-pink;
+                z-index: -3;
+            }
+        }
+
+        .lastName {
+            font-size: 56px;
+            line-height: 58px;
+            text-transform: uppercase;
+        }
+
+        .name {
+            font-size: 56px;
+            line-height: 58px;
+            font-weight: 300;
+        }
+
+        .separation-line {
+            width: 100%;
+            position: relative;
+            height: 3px;
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 20px 0px;
+
+            div {
+                height: 100%;
+                border-radius: 3px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            div:first-child {
+                width: 100%;
+                background-color: $palette-skin-color;
+            }
+
+            div:nth-child(2) {
+                width: 80%;
+                background-color: $palette-gray-brown;
+            }
+
+            div:last-child {
+                width: 40%;
+                background-color: $palette-pink;
+            }
+        }
+
+        .lawyer-title {
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 26px;
+            margin-bottom: 20px;
+        }
+
+        .data-paragraphs {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1em;
+            max-width: 70ch;
+        }
+    }
+
+    &__data-cards {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 20px;
+
+        .data-card {
+            padding: 30px 20px;
+            border-radius: 20px;
+            background: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+            &_specialization {
+                grid-column: 1/3;
+                .specialization-items {
+                    display: grid;
+                    column-gap: 20px;
+                    row-gap: 20px;
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            &__title {
+                display: flex;
+                column-gap: 10px;
+
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 22px;
+                margin-bottom: 20px;
+                .borderline {
+                    background-color: $palette-pink;
+                    width: 4px;
+                    border-radius: 4px;
+                }
+            }
+        }
+
+        .years-paragraph {
+            display: flex;
+            column-gap: 12px;
+            align-items: baseline;
+            justify-content: center;
+            &__years {
+                font-weight: 300;
+                font-size: 80px;
+                line-height: 94px;
+            }
+
+            &__noun {
+                font-weight: 300;
+                font-size: 50px;
+                line-height: 59px;
+            }
+        }
+    }
+}
+
+.project-button {
+    align-self: center;
+}
+
+@media screen and (max-width: 1100px) {
+    .lawyer {
+        &__main {
+            column-gap: 60px;
+
+            .image-container {
+                position: relative;
+                margin-left: 40px;
+            }
+
+            --wrapper-size: 260px;
+
+            .background-circle {
+                &_gbrown {
+                    left: -40px;
+                    bottom: -20px;
+                }
+
+                &_pink {
+                    right: -30px;
+                    bottom: -20px;
+                }
+            }
+
+            .lastName {
+                font-size: 45px;
+                line-height: 50px;
+            }
+
+            .name {
+                font-size: 45px;
+                line-height: 50px;
+            }
+
+            .lawyer-title {
+                font-size: 18px;
+                line-height: 20px;
+            }
+        }
+
+        &__data-cards {
+            .data-card {
+                padding: 20px 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                &__title {
+                    font-size: 18px;
+                    line-height: 20px;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .years-paragraph {
+                &__years {
+                    font-weight: 300;
+                    font-size: 75px;
+                    line-height: 40px;
+                }
+
+                &__noun {
+                    font-weight: 300;
+                    font-size: 50px;
+                    line-height: 59px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1060px) {
+    .lawyer {
+        .years-paragraph {
+            flex-direction: column;
+            align-items: center;
+            row-gap: 10px;
+            &__years {
+                line-height: 75px;
+            }
+
+            &__noun {
+                line-height: 59px;
+            }
+        }
+
+        &__data-cards{
+            .data-card{
+                height: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 890px) {
+    .lawyer {
+        &__main {
+            row-gap: 60px;
+            flex-direction: column;
+            --wrapper-size: 50vw;
+
+            .image-container {
+                margin-left: 0px;
+                align-self: center;
+            }
+
+            .background-circle {
+                &_gbrown {
+                    left: -80px;
+                    bottom: -20px;
+                }
+
+                &_pink {
+                    right: -70px;
+                    bottom: -10px;
+                }
+            }
+
+            .lastName {
+                font-size: 35px;
+                line-height: 40px;
+            }
+
+            .name {
+                font-size: 35px;
+                line-height: 40px;
+            }
+        }
+
+        &__data-cards .years-paragraph__years {
+            line-height: 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .lawyer {
+        &__data-cards {
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 20px;
+        }
+
+        .years-paragraph {
+            flex-direction: row;
+        }
+    }
+
+    .lawyer-container {
+        padding-bottom: 60px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .lawyer {
+        &__main {
+            row-gap: 50px;
+            --wrapper-size: 70vw;
+
+            .background-circle {
+                &_gbrown {
+                    left: -40px;
+                    bottom: -20px;
+                }
+
+                &_pink {
+                    right: -30px;
+                    bottom: -10px;
+                }
+            }
+
+            .lastName,
+            .name {
+                font-size: 28px;
+                line-height: 32px;
+            }
+
+            .lawyer-title {
+                font-size: 16px;
+                line-height: 18px;
+            }
+        }
+
+        &__data-cards .data-card {
+            &_specialization {
+                .specialization-items {
+                    column-gap: 15px;
+                    row-gap: 15px;
+                }
+            }
+
+            &__title {
+                column-gap: 7px;
+
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 18px;
+                margin-bottom: 15px;
+                .borderline {
+                    width: 3px;
+                    border-radius: 3px;
+                }
+            }
+        }
+
+        .years-paragraph {
+            column-gap: 10px;
+            &__years {
+                font-size: 50px;
+                line-height: 60px;
+            }
+
+            &__noun {
+                font-size: 40px;
+                line-height: 50px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .lawyer {
+        &__main {
+            .lastName,
+            .name {
+                font-size: 25px;
+                line-height: 28px;
+            }
+        }
+
+        &__data-cards {
+            grid-template-columns: 1fr;
+            .data-card {
+                &_specialization {
+                    grid-column: 1/-1;
+                    .specialization-items {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            }
+        }
+    }
+
+    .project-button {
+        width: 100% !important;
+    }
+}
