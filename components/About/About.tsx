@@ -2,14 +2,39 @@ import styles from './About.module.scss'
 import cn from 'classnames';
 import Image from 'next/image';
 import teamPicture from '../../public/Общая фотография.png'
+import { useEffect, useRef, useState } from 'react';
 const About = () => {
+
+    const sectionRef = useRef<HTMLDivElement | null>(null)
+    const [isIntersecting, setIsIntersecting] = useState<boolean>(false)
+
+
+    useEffect(() => {
+
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0]
+            setIsIntersecting(entry.isIntersecting)
+        })
+
+        if (sectionRef && sectionRef.current)
+            observer.observe(sectionRef.current)
+    }, [])
 
     return (
         <div className={styles.about} id='about-section'>
-            <h1 className={styles.about__title}>
-                <span>Тот, кто </span>
-                <span> не борется —</span>
-                <span className='light'>уже проиграл!</span>
+            <h1 className={cn(styles.about__title, { ['intersecting']: isIntersecting })} ref={sectionRef}>
+                <div className={'text-animation'}>
+                    <span className={'text-animation__text'}>Тот, кто </span>
+                    <div className={cn('text-animation__cover', 'text-animation__cover_left')}></div>
+                </div>
+                <div className={'text-animation'}>
+                    <span className={'text-animation__text'}>не борется —</span>
+                    <div className={cn('text-animation__cover', 'text-animation__cover_right')}></div>
+                </div>
+                <div className={'text-animation'}>
+                    <span className={cn('text-animation__text', 'light')}>уже проиграл!</span>
+                    <div className={cn('text-animation__cover', 'text-animation__cover_left')}></div>
+                </div>
             </h1>
             <div className={styles.photo}>
                 <Image src={teamPicture} alt="Общая фотография сотрудников коллегии" />
@@ -17,7 +42,7 @@ const About = () => {
 
             <div className={styles['decorative-circle']}></div>
 
-            <section className={styles['about__questions']}>
+            <section className={styles['about__questions']} >
 
                 <div className={styles['question-single']}>
                     <span className={styles['question-mark']}>?</span>

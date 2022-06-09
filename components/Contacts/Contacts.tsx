@@ -1,6 +1,6 @@
 import styles from './Contacts.module.scss'
 import cn from 'classnames';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const Contacts = () => {
 
@@ -35,16 +35,39 @@ const Contacts = () => {
         myMap.geoObjects.add(myGeoObject);
     }
 
+    const sectionRef = useRef<HTMLDivElement | null>(null)
+    const [isIntersecting, setIsIntersecting] = useState<boolean>(false)
+
+    useEffect(() => {
+
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0]
+            setIsIntersecting(entry.isIntersecting)
+        })
+
+        if (sectionRef && sectionRef.current)
+            observer.observe(sectionRef.current)
+    }, [])
+
     return (
         <section className={cn(styles.contacts, 'container')} id='contacts-section'>
-            <div className={styles.contacts__data}>
-                <div className={styles.contacts__title}>
-                    <h1>Контактная</h1>
-                    <h1 className='light'>Информация</h1>
-                    <span className='watermark-text'>Контакты</span>
-                </div>
+            <div className={styles.contacts__data} ref={sectionRef}>
 
-                <div className={styles.contacts__text}>
+                <h1 className={cn(styles.contacts__title, { ['intersecting']: isIntersecting })}>
+                    <div className={'text-animation'}>
+                        <span className={'text-animation__text'}>Контактная</span>
+                        <div className={cn('text-animation__cover', 'text-animation__cover_left')}></div>
+                    </div>
+                    <div className={'text-animation'}>
+                        <span className={cn('light', 'text-animation__text')}>Информация</span>
+                        <div className={cn('text-animation__cover', 'text-animation__cover_right')}></div>
+                    </div>
+                    <div className={styles['decorative-circle']}></div>
+
+                    <span className='watermark-text'>Контакты</span>
+                </h1>
+
+                <div className={styles.contacts__text} >
                     <a href='tel: +79141561147' className={styles['contact-single']}>
                         <img src="/phoneIcon.svg" alt="Телефон" />
                         <p className={styles.paragraph}>8 (914) 156 11 47</p>

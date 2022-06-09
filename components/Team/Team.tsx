@@ -9,21 +9,43 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import cn from "classnames";
+import { useEffect, useRef, useState } from "react";
 
 const Team = () => {
+
+    const sectionRef = useRef<HTMLDivElement | null>(null)
+    const [isIntersecting, setIsIntersecting] = useState<boolean>(false)
+
+    useEffect(() => {
+
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0]
+            setIsIntersecting(entry.isIntersecting)
+        })
+
+        if (sectionRef && sectionRef.current)
+            observer.observe(sectionRef.current)
+    }, [])
 
     return (
         <section className={styles.team} id='team-section'>
             <div className={cn("container", styles.team__container)}>
                 <div className={styles['team__text-block']}>
-                    <div className={styles.title}>
-                        <h1>Команда</h1>
-                        <h1 className={styles.title__small}>Профессионалов</h1>
+
+                    <h1 className={cn(styles.title, { ['intersecting']: isIntersecting })}>
+                        <div className={'text-animation'}>
+                            <span className={'text-animation__text'}>Команда</span>
+                            <div className={cn('text-animation__cover', 'text-animation__cover_left')}></div>
+                        </div>
+                        <div className={'text-animation'}>
+                            <span className={cn(styles.title__small, 'text-animation__text')}>Профессионалов</span>
+                            <div className={cn('text-animation__cover', 'text-animation__cover_right')}></div>
+                        </div>
                         <div className={styles['decorative-circle']}></div>
 
-                    </div>
+                    </h1>
 
-                    <div className={styles.description}>
+                    <div className={styles.description} ref={sectionRef}>
                         <p className="project-paragraph">
                             Наша команда состоит из преданных делу специалистов юриспруденции.
                         </p>

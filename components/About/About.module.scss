@@ -10,7 +10,7 @@
     justify-self: flex-end;
     position: relative;
 
-    .decorative-circle{
+    .decorative-circle {
         width: 600px;
         height: 600px;
         position: absolute;
@@ -25,8 +25,10 @@
     &__title {
         display: flex;
         flex-direction: column;
-        row-gap: 40px;
+        row-gap: 10px;
         align-self: flex-end;
+
+
     }
 
     &__questions {
@@ -101,7 +103,7 @@
         row-gap: 30px;
         position: relative;
 
-        .dec-half-circle{
+        .dec-half-circle {
             position: absolute;
             z-index: -1;
             right: 50px;
@@ -160,11 +162,13 @@
     }
 }
 
+
+
 @media screen and (max-width: 1150px) {
     .about {
         padding-top: 200px;
 
-        .decorative-circle{
+        .decorative-circle {
             top: 800px;
         }
 
@@ -211,7 +215,7 @@
             width: 100%;
             grid-column: 1/-1;
 
-            .dec-half-circle{
+            .dec-half-circle {
                 top: -100px;
             }
 
@@ -246,10 +250,10 @@
 
 @media screen and (max-width: 700px) {
     .about {
-        padding-top: 150px;
+        padding-top: 80px;
         row-gap: 50px;
 
-        .decorative-circle{
+        .decorative-circle {
             width: 300px;
             height: 300px;
             position: absolute;
@@ -272,7 +276,7 @@
             width: 100%;
             grid-column: 1/-1;
 
-            .dec-half-circle{
+            .dec-half-circle {
                 position: absolute;
                 z-index: -1;
                 right: 50px;
@@ -282,7 +286,7 @@
             .guarantee-card {
                 padding: 15px;
 
-                &__image{
+                &__image {
                     width: 60px;
                 }
             }
