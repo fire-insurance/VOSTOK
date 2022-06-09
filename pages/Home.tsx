@@ -1,3 +1,4 @@
+import styles from "../styles/Home.module.scss"
 import cn from "classnames";
 import TitleBlock from "../components/TitleBlock/TitleBlock";
 import About from "../components/About/About";
@@ -17,6 +18,7 @@ const Home = () => {
             <Services />
             <Contacts />
             <CallForm source={'с главной страницы'}/>
+
         </>
     )
 }
