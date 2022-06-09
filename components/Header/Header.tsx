@@ -22,20 +22,27 @@ const Header = () => {
                 onClick={handleBurgerClick}
             ></div>
             <header className={cn(styles.header, { [styles['header_burger-opened']]: burgerMenuOpened })}>
-                <img className={styles.logo} src='/Лого.svg' alt="логотип коллегии" />
+                <Link href='/#title-section' >
+                    <img className={styles.logo} src='/Лого.svg' alt="логотип коллегии" />
+                </Link>
                 <nav className={cn(styles.navigation, { [styles.navigation_opened]: burgerMenuOpened })}>
                     <div onClick={handleLinkClick}>
                         <Link href='/#title-section' >
-                            <a className={styles.navigation__link}>
-                                <img src='/HomeIcon.svg' alt="на главную" />
-                            </a>
+                            <img src='/HomeIcon.svg' alt="на главную" />
                         </Link>
                     </div>
-
-                    <a href="#about-section" className={styles.navigation__link} onClick={handleLinkClick}>О нас</a>
-                    <a href="#team-section" className={styles.navigation__link} onClick={handleLinkClick}>Команда</a>
-                    <a href="#services-section" className={styles.navigation__link} onClick={handleLinkClick}>Услуги</a>
-                    <a href="#contacts-section" className={styles.navigation__link} onClick={handleLinkClick}>Контакты</a>
+                    <Link href="/#about-section">
+                        <a className={styles.navigation__link} onClick={handleLinkClick}>О нас</a>
+                    </Link>
+                    <Link href="/#team-section">
+                        <a className={styles.navigation__link} onClick={handleLinkClick}>Команда</a>
+                    </Link>
+                    <Link href="/#services-section">
+                        <a className={styles.navigation__link} onClick={handleLinkClick}>Услуги</a>
+                    </Link>
+                    <Link href="/#contacts-section" >
+                        <a className={styles.navigation__link} onClick={handleLinkClick}>Контакты</a>
+                    </Link>
 
                 </nav>
                 <div className={cn(styles.burger, { [styles.burger_opened]: burgerMenuOpened })} onClick={handleBurgerClick}>
