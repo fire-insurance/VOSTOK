@@ -1,9 +1,18 @@
 let myMap;
+const timerID = setInterval(getYmaps, 500)
 
-ymaps?.ready(init_ymaps);
+function getYmaps() {
+    console.log(window.ymaps)
+    if (window.ymaps) {
+        console.log(window.ymaps)
+        clearInterval(timerID)
+        ymaps?.ready(init_ymaps);
+    }
+    else return
+}
+
 
 function init_ymaps() {
-
     myMap = new ymaps.Map('map', {
         center: [48.48956188, 135.06344215],
         zoom: 17

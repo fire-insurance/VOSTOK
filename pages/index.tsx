@@ -2,7 +2,6 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Home from './Home'
 import Script from 'next/script'
-import { useEffect, useState } from 'react'
 
 const PageContainer: NextPage = () => {
   const ymaps_link = `https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=${process.env.YMAPS_KEY}`
@@ -22,7 +21,7 @@ const PageContainer: NextPage = () => {
         </div>
       </main>
       <Script src={ymaps_link} strategy='afterInteractive' />
-      <Script src='/maps.js' strategy='lazyOnload' />
+      <Script src='/maps.js' strategy='afterInteractive' />
     </>
   )
 }

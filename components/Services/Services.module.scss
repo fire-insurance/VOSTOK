@@ -59,7 +59,6 @@
     }
 
     &__overflow {
-        flex-wrap: wrap;
         justify-content: center;
         max-height: calc((var(--service-size) * 3) + 14px);
         min-width: calc((var(--service-size) * 2) + 44px);

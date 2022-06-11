@@ -25,7 +25,7 @@ export const teamData = [
         lastName: 'Ушакова',
         name: 'Наталья Александровна',
         title: 'Адвокат',
-        experienceStart: 2000,
+        experienceStart: 1999,
         lawyerSince: 2019,
         photo: '/Team/Ushakova.png',
         specialization: [
@@ -45,7 +45,7 @@ export const teamData = [
         lastName: 'Кутепов',
         name: 'Михаил Сергеевич',
         title: 'Адвокат',
-        experienceStart: 2007,
+        experienceStart: 2005,
         lawyerSince: 2019,
         photo: '/Team/Kutepov.png',
         specialization: [
@@ -65,7 +65,7 @@ export const teamData = [
         lastName: 'Баранова',
         name: 'Ирина Сергеевна',
         title: 'Адвокат',
-        experienceStart: 2012,
+        experienceStart: 2013,
         lawyerSince: 2019,
         photo: '/Team/Baranova.png',
         specialization: [
@@ -106,7 +106,7 @@ export const teamData = [
         lastName: 'Попов',
         name: 'Андрей Николаевич',
         title: 'Помощник адвоката',
-        experienceStart: 2006,
+        experienceStart: 2011,
         lawyerSince: 0,
         photo: '/Team/Popov.png',
         specialization: [
@@ -115,8 +115,8 @@ export const teamData = [
             'Страховое дело',
         ],
         dataParagraphs: [
-            'Много лет специализируется на работе с недвижимостью.',
-            'Имеет опыт высшее юридическое образование',
+            'Специалист по работе с недвижимостью.',
+            'Имеет опыт высшее юридическое образование.',
         ]
     },
 ]

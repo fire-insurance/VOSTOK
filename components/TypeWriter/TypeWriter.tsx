@@ -26,8 +26,8 @@ const TypeWriter: FC<TypeWriterProps> = ({ words, textClass }) => {
     }, [])
 
     const changeWordWithTypeWriter = () => {
-        let typespeed: number = isDeletingRef.current ? 150 : 250;
-
+        let typespeed: number = isDeletingRef.current ? 150 : 300;
+        
         if (isDeletingRef.current) {
             setCurrentWord(words[wordIndexRef.current].substring(0, currentWordRef.current.length - 1))
         }
@@ -42,7 +42,6 @@ const TypeWriter: FC<TypeWriterProps> = ({ words, textClass }) => {
         else if (!isDeletingRef.current && currentWordRef.current == words[wordIndexRef.current]) {
             setIsDeleting(true)
             typespeed = 1000
-
         }
 
         setTimeout(() => changeWordWithTypeWriter(), typespeed)

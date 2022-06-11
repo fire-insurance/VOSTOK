@@ -19,8 +19,8 @@ const Header = () => {
     return (
         <div className="page-layout">
             <div className={cn('darkening', { ['darkening_active']: burgerMenuOpened })}
-                onClick={handleBurgerClick}
-            ></div>
+                onClick={handleBurgerClick}>
+            </div>
             <header className={cn(styles.header, { [styles['header_burger-opened']]: burgerMenuOpened })}>
                 <Link href='/#title-section' >
                     <img className={styles.logo} src='/Лого.svg' alt="логотип коллегии" />
@@ -43,7 +43,6 @@ const Header = () => {
                     <Link href="/#contacts-section" >
                         <a className={styles.navigation__link} onClick={handleLinkClick}>Контакты</a>
                     </Link>
-
                 </nav>
                 <div className={cn(styles.burger, { [styles.burger_opened]: burgerMenuOpened })} onClick={handleBurgerClick}>
                     <div></div>
