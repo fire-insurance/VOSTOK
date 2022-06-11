@@ -3,6 +3,7 @@ import ProjectButton from '../ProjectButton/ProjectButton';
 import styles from './CallForm.module.scss'
 import cn from 'classnames'
 import { FC, FormEvent, useState } from 'react';
+import axios from 'axios';
 
 interface formInterface {
     name: string,
@@ -47,7 +48,6 @@ const CallForm: FC<CallFormProps> = ({ source }) => {
                     return;
                 }
             }
-
         }
 
         setFormSubmitted(true)
@@ -59,11 +59,7 @@ const CallForm: FC<CallFormProps> = ({ source }) => {
     }
 
     const sendToTelegram = (name: string, phone: string, question: string) => {
-        const message = `Новая заявка ${source}: %0A%0A● Имя: ${name} %0A%0A● Телефон: ${phone} %0A%0A● Вопрос: ${question}`
-        const url = `https://api.telegram.org/bot${process.env.BOT_TOKEN}/sendMessage?chat_id=${process.env.CHAT_ID}&text=`
-        let xhttp = new XMLHttpRequest();
-        xhttp.open("GET", url + message, true);
-        xhttp.send()
+        axios.post(`http://localhost:3000/api/telegram?source=${source}&name=${name}&phone=${phone}&question=${question}`)
     }
 
     return (

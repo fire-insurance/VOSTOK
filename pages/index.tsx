@@ -4,7 +4,7 @@ import Home from './Home'
 import Script from 'next/script'
 
 const PageContainer: NextPage = () => {
-  const ymaps_link = `https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=${process.env.YMAPS_KEY}`
+  const ymaps_link = `https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=${process.env.NEXT_PUBLIC_YMAPS_KEY}`
 
   return (
     <>
