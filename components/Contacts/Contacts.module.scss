@@ -39,7 +39,7 @@
         width: fit-content;
         display: flex;
         flex-direction: column;
-        row-gap: 15px;
+        row-gap: 20px;
     }
 
     .map-container {
@@ -94,14 +94,18 @@
     }
 }
 
+@media screen and (max-width: 1280px) {
+    .contacts__title{
+        row-gap: 15px;
+    }
+}
+
 @media screen and (max-width: 1050px) {
     .contacts {
         padding-top: 150px;
         margin-bottom: 100px;
 
-        &__title {
-            row-gap: 0px;
-        }
+
 
         &__data {
             row-gap: 50px;
@@ -145,6 +149,10 @@
         flex-direction: column;
         width: 100%;
         row-gap: 50px;
+
+        &__title{
+            row-gap: 10px;
+        }
 
         .map-container {
             --map-width: calc(100vw - 90px);

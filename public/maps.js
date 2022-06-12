@@ -2,9 +2,7 @@ let myMap;
 const timerID = setInterval(getYmaps, 500)
 
 function getYmaps() {
-    console.log(window.ymaps)
     if (window.ymaps) {
-        console.log(window.ymaps)
         clearInterval(timerID)
         ymaps?.ready(init_ymaps);
     }

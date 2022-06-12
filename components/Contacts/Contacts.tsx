@@ -62,7 +62,6 @@ const Contacts = () => {
                         <span className={cn('light', 'text-animation__text')}>Информация</span>
                         <div className={cn('text-animation__cover', 'text-animation__cover_right')}></div>
                     </div>
-                    <div className={styles['decorative-circle']}></div>
 
                     <span className='watermark-text'>Контакты</span>
                 </h1>

@@ -65,7 +65,7 @@ const Lawyer = () => {
 
         <>
             <Head>
-                <title>{`Восток | ${lawyer.lastName} ${lawyer.name} адвокат`}</title>
+                <title>{`Восток | ${lawyer.lastName} ${lawyer.name} - ${lawyer.title}`}</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta name="description" content={`${lawyer.lastName} ${lawyer.name} - ${lawyer.title} в коллегии адвокатов "Восток" в городе Хабаровск `} />
                 <meta name="keywords" content={`Коллегия адвокатов, Восток, Хабаровск, адвокат, ${lawyer.lastName} ${lawyer.name}, ${lawyer.specialization.toString()}`} />
