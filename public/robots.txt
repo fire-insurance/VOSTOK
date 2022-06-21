@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /api
+Sitemap: https://vostok-khv.ru/sitemap.xml
+Host: https://vostok-khv.ru
