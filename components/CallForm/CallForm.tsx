@@ -58,7 +58,7 @@ const CallForm: FC<CallFormProps> = ({ source }) => {
     }
 
     const sendToTelegram = (name: string, phone: string, question: string) => {
-        axios.post(`http://localhost:3000/api/telegram?source=${source}&name=${name}&phone=${phone}&question=${question}`)
+        axios.post(`https://vostok-khv.ru/api/telegram?source=${source}&name=${name}&phone=${phone}&question=${question}`)
     }
 
     return (

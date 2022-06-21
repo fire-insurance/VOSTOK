@@ -21,12 +21,6 @@
             position: relative;
             height: 100%;
             aspect-ratio: 0.81;
-            filter: grayscale(1);
-            transition: 0.5s filter ease-in-out;
-
-            &:hover{
-                filter: grayscale(0);
-            }
         }
 
         img {
@@ -111,6 +105,9 @@
 
             img {
                 position: absolute;
+		height: 60%;
+		top:20px;
+		transform: translateX(-50%);
                 left: 50%;
             }
         }

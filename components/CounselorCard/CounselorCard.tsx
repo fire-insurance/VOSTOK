@@ -44,7 +44,7 @@ const CounselorCard: FC<CounselorCardProps> = ({ id, lastName, name, title, expe
         <div className={styles.card}>
             <div className={styles['card__image-container']}>
                 <div className={styles.portrait}>
-                    <Image src={photo} alt="Адвокат" layout='fill' />
+                    <img src={photo} alt="Адвокат"/>
                 </div>
 
             </div>

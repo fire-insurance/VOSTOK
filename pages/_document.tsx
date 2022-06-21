@@ -8,6 +8,7 @@ export default function Document() {
                 <meta charSet="UTF-8" />
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
                 <meta name="robots" content="index,follow" />
+		<meta name="yandex-verification" content="c402569a83f930dc" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <body>
