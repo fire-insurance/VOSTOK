@@ -77,7 +77,6 @@
         padding: 12px 36px;
         border-radius: 60px;
         text-decoration: none;
-        text-transform: uppercase;
         color: #fff;
         font-weight: 400;
         font-size: 20px;
@@ -101,18 +100,10 @@
 
         &__image-container {
             border-radius: 60px;
-            width: 100%;
-
-            img {
-                position: absolute;
-		height: 60%;
-		top:20px;
-		transform: translateX(-50%);
-                left: 50%;
-            }
         }
 
         &__data {
+            width: 80%;
             .name-block {
                 &__lastName {
                     font-size: 22px;
@@ -142,10 +133,18 @@
         row-gap: 20px;
         &__image-container {
             border-radius: 40px;
-            height: 250px;
+            height: 200px;
             min-width: unset;
             width: 100%;
             max-width: unset;
+
+            img {
+                position: absolute;
+                height: 60%;
+                top: 50px;
+                transform: translateX(-50%);
+                left: 50%;
+            }
 
             .portrait {
                 height: 400px;
@@ -154,32 +153,31 @@
         }
         &__data {
             width: 100%;
-
+            row-gap: 15px;
             .perks {
                 justify-content: space-between;
+                row-gap: 15px;
             }
         }
     }
 }
 
 @media screen and (max-width: 350px) {
-    .card {
-        &__data {
-            .name-block {
-                &__lastName {
-                    font-size: 18px;
-                    line-height: 20px;
-                }
-
-                &__name {
-                    font-size: 16px;
-                    line-height: 18px;
-                }
+    .card__data {
+        .name-block {
+            &__lastName {
+                font-size: 18px;
+                line-height: 20px;
             }
 
-            .perks {
-                flex-direction: column;
+            &__name {
+                font-size: 16px;
+                line-height: 18px;
             }
+        }
+
+        .perks {
+            flex-direction: column;
         }
     }
 }

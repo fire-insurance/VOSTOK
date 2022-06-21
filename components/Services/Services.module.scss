@@ -33,7 +33,7 @@
     &__data {
         display: flex;
         flex-direction: column;
-        row-gap: 100px;
+        row-gap: 70px;
 
         .text-block {
             display: flex;
@@ -197,8 +197,10 @@
             }
         }
 
-        &__project-button {
-            align-self: center;
+        .button-link{
+            display: flex;
+            justify-content: center;
+            text-decoration: none;
         }
     }
 }

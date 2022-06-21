@@ -53,7 +53,7 @@ const Contacts = () => {
         <section className={cn(styles.contacts, 'container')} id='contacts-section'>
             <div className={styles.contacts__data} ref={sectionRef}>
 
-                <h1 className={cn(styles.contacts__title, { ['intersecting']: isIntersecting })}>
+                <h2 className={cn(styles.contacts__title, { ['intersecting']: isIntersecting })}>
                     <div className={'text-animation'}>
                         <span className={'text-animation__text'}>Контактная</span>
                         <div className={cn('text-animation__cover', 'text-animation__cover_left')}></div>
@@ -64,20 +64,20 @@ const Contacts = () => {
                     </div>
 
                     <span className='watermark-text'>Контакты</span>
-                </h1>
+                </h2>
 
                 <div className={styles.contacts__text} >
                     <a href='tel: +79141561147' className={styles['contact-single']}>
                         <img src="/phoneIcon.svg" alt="Телефон" />
-                        <p className={styles.paragraph}>8 (914) 156 11 47</p>
+                        <p>8 (914) 156 11 47</p>
                     </a>
                     <div className={styles['contact-single']}>
                         <img src="/locationIcon.svg" alt="Адрес" />
-                        <p className={styles.paragraph}>г. Хабаровск,  ул. Лейтенанта Шмидта, 30 офис 20/2</p>
+                        <p>г. Хабаровск,  ул. Лейтенанта Шмидта, 30 офис 20/2</p>
                     </div>
                     <a href='mailto: habbara@bk.ru' className={styles['contact-single']}>
                         <img src="/mailIcon.svg" alt="Электронная почта" />
-                        <p className={styles.paragraph}>habbara@bk.ru</p>
+                        <p>habbara@bk.ru</p>
                     </a>
                 </div>
             </div>

@@ -20,7 +20,6 @@ interface CallFormProps {
     source: string
 }
 
-
 const CallForm: FC<CallFormProps> = ({ source }) => {
 
     const [errors, setErrors] = useState<formInterface>(emptyErrors)
@@ -71,7 +70,7 @@ const CallForm: FC<CallFormProps> = ({ source }) => {
                 </div>
 
                 <div className={styles.callForm__title}>
-                    <h2>Свяжитесь с нами уже сейчас</h2>
+                    <h3>Свяжитесь с нами уже сейчас</h3>
 
                     <div className={styles['separation-line']}>
                         <div></div>
@@ -87,7 +86,7 @@ const CallForm: FC<CallFormProps> = ({ source }) => {
 
                     <label className={styles['input-block']}>
                         <p>Ваше имя</p>
-                        <input name='name' type="text" className={styles.input} />
+                        <input name='name' type="text" className={cn(styles.input, { [styles['input_error']]: errors.name })} />
                         <p className={cn('project-paragraph',
                             styles['error-text'],
                             { [styles['error-text_active']]: errors.name })}
@@ -97,7 +96,7 @@ const CallForm: FC<CallFormProps> = ({ source }) => {
                     </label>
                     <label className={styles['input-block']}>
                         <p>Номер телефона</p>
-                        <input name='phone' type="text" className={styles.input} />
+                        <input name='phone' type="text" className={cn(styles.input, { [styles['input_error']]: errors.phone })}  />
                         <p className={cn('project-paragraph',
                             styles['error-text'],
                             { [styles['error-text_active']]: errors.phone })}
@@ -107,7 +106,7 @@ const CallForm: FC<CallFormProps> = ({ source }) => {
                     </label>
                     <label className={cn(styles['input-block'], styles['input-block_textarea'])}>
                         <p>Ваш вопрос</p>
-                        <textarea name='question' className={styles.input} />
+                        <textarea name='question' className={cn(styles.input, { [styles['input_error']]: errors.question })}  />
                         <p className={cn('project-paragraph',
                             styles['error-text'],
                             { [styles['error-text_active']]: errors.question })}
@@ -116,7 +115,7 @@ const CallForm: FC<CallFormProps> = ({ source }) => {
                         </p>
                     </label>
                     <div className={styles.affirmation}>
-                        <input type="checkbox" name="affirmation" id="affirmation" checked disabled/>
+                        <input className={styles.affirmation__input} type="checkbox" name="affirmation" id="affirmation" checked disabled />
                         <p className={'project-paragraph light'}>Я даю свое согласие на обработку моих персональных данных в соответствии с законом №152-ФЗ «О персональных данных» от 27.07.2006 г.</p>
                     </div>
                     <ProjectButton text='Заказать звонок' extraClass={styles['callForm__project-button']} type='submit' />

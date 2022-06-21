@@ -32,12 +32,12 @@ const Services = () => {
                 <div className={styles.services__data} ref={sectionRef} >
                     <div className={styles.services__title} >
                         <span className='watermark-text'>Услуги</span>
-                        <h1 className={cn({ ['intersecting']: isIntersecting })}>
+                        <h2 className={cn({ ['intersecting']: isIntersecting })}>
                             <div className={'text-animation'}>
                                 <span className={'text-animation__text'}>Наши услуги</span>
                                 <div className={cn('text-animation__cover', 'text-animation__cover_left')}></div>
                             </div>
-                        </h1>
+                        </h2>
 
                         <div className={styles['decorative-circle']}></div>
                     </div>
@@ -57,7 +57,7 @@ const Services = () => {
                                 обращайтесь уже сейчас.
                             </p>
                         </div>
-                        <a href="/Положение об оплате Восток.docx" target='_blank'>
+                        <a href="/Положение об оплате Восток.docx" target='_blank' className={styles['button-link']}>
                             <ProjectButton text='Прайс-лист' extraClass={styles['services__project-button']} />
                         </a>
 

@@ -32,7 +32,7 @@ const Team = () => {
             <div className={cn("container", styles.team__container)}>
                 <div className={styles['team__text-block']}>
 
-                    <h1 className={cn(styles.title, { ['intersecting']: isIntersecting })}>
+                    <h2 className={cn(styles.title, { ['intersecting']: isIntersecting })}>
                         <div className={'text-animation'}>
                             <span className={'text-animation__text'}>Команда</span>
                             <div className={cn('text-animation__cover', 'text-animation__cover_left')}></div>
@@ -43,7 +43,7 @@ const Team = () => {
                         </div>
                         <div className={styles['decorative-circle']}></div>
 
-                    </h1>
+                    </h2>
 
                     <div className={styles.description} ref={sectionRef}>
                         <p className="project-paragraph">

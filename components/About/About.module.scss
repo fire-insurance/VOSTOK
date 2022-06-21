@@ -2,7 +2,6 @@
 
 .about {
     padding-top: 250px;
-
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 70px;
@@ -108,15 +107,6 @@
             top: 350px;
         }
 
-        h2 {
-            font-size: 40px;
-            line-height: 52px;
-            text-transform: uppercase;
-            font-family: "Oswald", sans-serif;
-            max-width: 10ch;
-            align-self: flex-end;
-        }
-
         .guarantee-card {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(20px);
@@ -158,15 +148,21 @@
             }
         }
     }
-}
 
-@media screen and (max-width: 1280px) {
-    .about__title{
-        row-gap: 15px;
+    h3 {
+        max-width: 10ch;
     }
 }
 
+@media screen and (max-width: 1280px) {
+    .about {
+        padding-top: 150px;
+    }
 
+    .about__title {
+        row-gap: 15px;
+    }
+}
 
 @media screen and (max-width: 1150px) {
     .about {
@@ -220,8 +216,7 @@
                 top: -100px;
             }
 
-            h2 {
-                font-size: 40px;
+            h3 {
                 max-width: unset;
                 grid-column: 1/-1;
             }
@@ -250,7 +245,7 @@
 }
 
 @media screen and (max-width: 850px) {
-    .about__title{
+    .about__title {
         row-gap: 10px;
     }
 }
@@ -284,10 +279,7 @@
             grid-column: 1/-1;
 
             .dec-half-circle {
-                position: absolute;
-                z-index: -1;
-                right: 50px;
-                top: 150px;
+               display: none;
             }
 
             .guarantee-card {
@@ -296,10 +288,6 @@
                 &__image {
                     width: 60px;
                 }
-            }
-
-            h2 {
-                font-size: 30px;
             }
         }
     }
@@ -327,10 +315,6 @@
             column-gap: 30px;
             row-gap: 20px;
             grid-template-columns: repeat(1, 1fr);
-
-            h2 {
-                font-size: 30px;
-            }
         }
     }
 }

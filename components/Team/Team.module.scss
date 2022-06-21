@@ -24,9 +24,6 @@
 
             &__small {
                 font-weight: 300;
-                font-size: 88px;
-                line-height: 80px;
-
                 letter-spacing: -0.015em;
             }
 
@@ -94,7 +91,7 @@
             flex-direction: column;
             row-gap: 30px;
             align-items: baseline;
-	    width: 100%;
+            width: 100%;
             .description {
                 width: 100%;
                 margin-top: 0px;
@@ -112,11 +109,6 @@
 
 @media screen and (max-width: 1280px) {
     .team__text-block {
-        .title__small {
-            font-size: 72px;
-            line-height: 70px;
-        }
-
         .title {
             row-gap: 15px;
         }
@@ -130,10 +122,6 @@
 
     .team__text-block .title {
         row-gap: 20px;
-        &__small {
-            font-size: 60px;
-            line-height: 50px;
-        }
     }
 }
 
@@ -146,16 +134,5 @@
 @media screen and (max-width: 600px) {
     .team {
         padding-top: 60px;
-    }
-    .team__text-block .title__small {
-        font-size: 45px;
-        line-height: 40px;
-    }
-}
-
-@media screen and (max-width: 350px) {
-    .team__text-block .title__small {
-        font-size: 42px;
-        line-height: 38px;
     }
 }

@@ -3,11 +3,11 @@ import cn from 'classnames';
 import Image from 'next/image';
 import teamPicture from '../../public/Общая фотография.webp'
 import { useEffect, useRef, useState } from 'react';
+
 const About = () => {
 
     const sectionRef = useRef<HTMLDivElement | null>(null)
     const [isIntersecting, setIsIntersecting] = useState<boolean>(false)
-
 
     useEffect(() => {
 
@@ -22,7 +22,7 @@ const About = () => {
 
     return (
         <div className={styles.about} id='about-section'>
-            <h1 className={cn(styles.about__title, { ['intersecting']: isIntersecting })} ref={sectionRef}>
+            <h2 className={cn(styles.about__title, { ['intersecting']: isIntersecting })} ref={sectionRef}>
                 <div className={'text-animation'}>
                     <span className={'text-animation__text'}>Тот, кто </span>
                     <div className={cn('text-animation__cover', 'text-animation__cover_left')}></div>
@@ -35,7 +35,7 @@ const About = () => {
                     <span className={cn('text-animation__text', 'light')}>уже проиграл!</span>
                     <div className={cn('text-animation__cover', 'text-animation__cover_left')}></div>
                 </div>
-            </h1>
+            </h2>
             <div className={styles.photo}>
                 <Image src={teamPicture} alt="Общая фотография сотрудников коллегии" />
             </div>
@@ -84,7 +84,7 @@ const About = () => {
 
             <section className={styles['about__guarantees']}>
                 <img className={styles['dec-half-circle']} src="/dec_half_circle.svg" alt="" />
-                <h2>Мы гарантируем</h2>
+                <h3>Мы гарантируем</h3>
 
                 <div className={styles["guarantee-card"]}>
                     <img className={styles['guarantee-card__image']} src="/cheapIcon.svg" alt="" />

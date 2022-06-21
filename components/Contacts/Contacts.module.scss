@@ -95,7 +95,7 @@
 }
 
 @media screen and (max-width: 1280px) {
-    .contacts__title{
+    .contacts__title {
         row-gap: 15px;
     }
 }
@@ -104,8 +104,6 @@
     .contacts {
         padding-top: 150px;
         margin-bottom: 100px;
-
-
 
         &__data {
             row-gap: 50px;
@@ -150,8 +148,13 @@
         width: 100%;
         row-gap: 50px;
 
-        &__title{
+        &__title {
             row-gap: 10px;
+        }
+
+        &__text .contact-single {
+            font-size: 18px;
+            line-height: 20px;
         }
 
         .map-container {
@@ -183,8 +186,8 @@
 
             .contact-single {
                 column-gap: 10px;
-                font-size: 20px;
-                line-height: 22px;
+                font-size: 16px;
+                line-height: 18px;
 
                 img {
                     width: 22px;

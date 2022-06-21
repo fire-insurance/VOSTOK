@@ -8,51 +8,41 @@
 .callForm {
     background-color: #fff !important;
     padding: 30px 40px;
-    max-width: 700px;
+    max-width: 730px;
     width: 100%;
     box-shadow: (0px 0px 10px rgba(0, 0, 0, 0.1));
     border-radius: 20px;
     position: relative;
 
-    &__title {
-        font-family: "Oswald", sans-serif;
-        font-size: 30px;
+    .separation-line {
+        width: 100%;
+        position: relative;
+        height: 3px;
+        border-radius: 3px;
+        overflow: hidden;
+        margin-top: 10px;
 
-        h2 {
-            line-height: 44px;
-            font-weight: 400;
+        div {
+            height: 100%;
+            border-radius: 3px;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
-        .separation-line {
+        div:first-child {
             width: 100%;
-            position: relative;
-            height: 3px;
-            border-radius: 3px;
-            overflow: hidden;
-            margin-top: 10px;
+            background-color: $palette-skin-color;
+        }
 
-            div {
-                height: 100%;
-                border-radius: 3px;
-                position: absolute;
-                top: 0;
-                left: 0;
-            }
+        div:nth-child(2) {
+            width: 80%;
+            background-color: $palette-gray-brown;
+        }
 
-            div:first-child {
-                width: 100%;
-                background-color: $palette-skin-color;
-            }
-
-            div:nth-child(2) {
-                width: 80%;
-                background-color: $palette-gray-brown;
-            }
-
-            div:last-child {
-                width: 40%;
-                background-color: $palette-pink;
-            }
+        div:last-child {
+            width: 40%;
+            background-color: $palette-pink;
         }
     }
 
@@ -71,16 +61,20 @@
             .input {
                 margin-top: 5px;
                 width: 100%;
-                border: 1px solid rgba(0, 0, 0, 0.08);
+                border: 2px solid rgba(0, 0, 0, 0.08);
                 border-radius: 20px;
                 padding: 10px 20px;
                 font-weight: 300;
                 transition: 0.25s;
-                outline: 2px solid transparent;
+                outline: none;
 
                 &:active,
                 &:focus {
-                    outline: 2px solid $palette-light-blue;
+                    border: 2px solid $palette-light-blue;
+                }
+
+                &_error {
+                    border: 2px solid $palette-pink;
                 }
             }
 
@@ -158,16 +152,11 @@
         }
     }
 
-    .affirmation{
+    .affirmation {
         display: flex;
         column-gap: 10px;
         align-items: center;
         grid-column: 1/-1;
-
-
-        &__text{
-            font-weight: 300;
-        }
     }
 }
 
@@ -217,11 +206,6 @@
     .callForm {
         padding: 20px 30px;
 
-        &__title h2 {
-            font-size: 24px;
-            line-height: 28px;
-        }
-
         &__form {
             grid-template-columns: 1fr;
             padding-top: 25px;
@@ -231,10 +215,8 @@
                 font-size: 18px;
                 line-height: 20px;
 
-                &_textarea {
-                    .error-text {
-                        bottom: -25px;
-                    }
+                &_textarea .error-text {
+                    bottom: -25px;
                 }
             }
         }
@@ -266,23 +248,25 @@
 @media screen and (max-width: 500px) {
     .callForm {
         padding: 20px 20px;
-
-        &__title h2{
-            font-size: 22px;
-            line-height: 24px;
-        }
-
         &__form {
             display: grid;
             grid-template-columns: 1fr;
             padding-top: 20px;
-            row-gap: 35px;
+            row-gap: 25px;
 
             .input-block {
                 font-size: 16px;
                 line-height: 18px;
 
+                .input {
+                    padding: 8px 15px;
+                }
+
                 &_textarea {
+                    textarea {
+                        height: 5em !important;
+                    }
+
                     .error-text {
                         bottom: -20px;
                     }
@@ -312,6 +296,10 @@
             &_skin {
                 --size: 100px;
             }
+        }
+
+        .affirmation p {
+            font-size: 10px;
         }
     }
 }
