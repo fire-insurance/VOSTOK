@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import ProjectButton from '../ProjectButton/ProjectButton';
 import styles from './CallForm.module.scss'
 import cn from 'classnames'
@@ -116,7 +115,10 @@ const CallForm: FC<CallFormProps> = ({ source }) => {
                             {errors.question}
                         </p>
                     </label>
-
+                    <div className={styles.affirmation}>
+                        <input type="checkbox" name="affirmation" id="affirmation" checked disabled/>
+                        <p className={'project-paragraph light'}>Я даю свое согласие на обработку моих персональных данных в соответствии с законом №152-ФЗ «О персональных данных» от 27.07.2006 г.</p>
+                    </div>
                     <ProjectButton text='Заказать звонок' extraClass={styles['callForm__project-button']} type='submit' />
                 </form>
             </section>

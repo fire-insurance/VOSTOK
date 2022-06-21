@@ -1,7 +1,7 @@
 import styles from './About.module.scss'
 import cn from 'classnames';
 import Image from 'next/image';
-import teamPicture from '../../public/Общая фотография.png'
+import teamPicture from '../../public/Общая фотография.webp'
 import { useEffect, useRef, useState } from 'react';
 const About = () => {
 

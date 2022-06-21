@@ -6,7 +6,7 @@ export const teamData = [
         title: 'Председатель коллегии',
         experienceStart: 1989,
         lawyerSince: 2010,
-        photo: '/Team/Ushakov.png',
+        photo: '/Team/Ushakov.webp',
         specialization: [
             'Уголовное право',
             'Административное право',
@@ -27,7 +27,7 @@ export const teamData = [
         title: 'Адвокат',
         experienceStart: 1999,
         lawyerSince: 2019,
-        photo: '/Team/Ushakova.png',
+        photo: '/Team/Ushakova.webp',
         specialization: [
             'Защита несовершеннолетних',
             'Ведение дел по ДТП',
@@ -47,7 +47,7 @@ export const teamData = [
         title: 'Адвокат',
         experienceStart: 2005,
         lawyerSince: 2019,
-        photo: '/Team/Kutepov.png',
+        photo: '/Team/Kutepov.webp',
         specialization: [
             'Трудовое право',
             'Социальное право',
@@ -67,7 +67,7 @@ export const teamData = [
         title: 'Адвокат',
         experienceStart: 2013,
         lawyerSince: 2019,
-        photo: '/Team/Baranova.png',
+        photo: '/Team/Baranova.webp',
         specialization: [
             'Экономические преступления',
             'Уголовное право',
@@ -88,7 +88,7 @@ export const teamData = [
         title: 'Адвокат',
         experienceStart: 2002,
         lawyerSince: 2019,
-        photo: '/Team/Karev.png',
+        photo: '/Team/Karev.webp',
         specialization: [
             'Экономические преступления',
             'Уголовное право',
@@ -108,7 +108,7 @@ export const teamData = [
         title: 'Помощник адвоката',
         experienceStart: 2011,
         lawyerSince: 0,
-        photo: '/Team/Popov.png',
+        photo: '/Team/Popov.webp',
         specialization: [
             'Недвижимость',
             'Наследственное право',

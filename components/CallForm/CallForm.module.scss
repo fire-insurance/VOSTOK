@@ -157,6 +157,18 @@
                 brightness(102%) contrast(98%);
         }
     }
+
+    .affirmation{
+        display: flex;
+        column-gap: 10px;
+        align-items: center;
+        grid-column: 1/-1;
+
+
+        &__text{
+            font-weight: 300;
+        }
+    }
 }
 
 .checkMark {
