@@ -21,22 +21,29 @@ const CounselorCard: FC<CounselorCardProps> = ({ id, lastName, name, title, expe
 
         switch (yearsPassed % 10) {
             case 1: {
-                nounForm = ' год стажа'
+                nounForm = ' год'
                 break;
             }
 
             case 2:
             case 3:
             case 4: {
-                nounForm = ' года стажа'
+                nounForm = ' года'
                 break;
             }
             default: {
-                nounForm = ' лет стаж'
+                nounForm = ' лет'
             }
         }
 
-        return yearsPassed + nounForm
+        if (yearsPassed > 10 && yearsPassed < 20) {
+            nounForm = ' лет'
+        }
+
+        return <p className={styles['years-paragraph']}>
+            <span className={styles['years-paragraph__years']}>{yearsPassed}</span>
+            <span className={styles['years-paragraph__noun']}>{nounForm}</span>
+        </p>
     }
 
     return (
